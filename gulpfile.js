@@ -7,17 +7,17 @@ var nodemon = require('nodemon');
 var notify = require("gulp-notify");
 
 gulp.src("./src/view/home.html")
-  .pipe(notify("Hello Hello!"));
 
-
+  .pipe(notify("Hello Human!"));
 
 gulp.task('serve',['run'], function() {
     bs.init({
-        logPrefix: "te deje entero loco",
-        notify: false,
+        logPrefix: "Snuuper",
+        notify: true,
         logConnections: true,
         proxy: "localhost:8081"
     });
+
  gulp.watch("./src/view/*.html").on('change', bs.reload);
 
 });
@@ -39,7 +39,6 @@ gulp.task('run',function() {
   })
 });
 
-
 gulp.task('bower', function () {
   gulp.src('./views/index.ejs')
     .pipe(wiredep({
@@ -48,5 +47,3 @@ gulp.task('bower', function () {
     }))
     .pipe(gulp.dest('./views/'))
 })
-
-

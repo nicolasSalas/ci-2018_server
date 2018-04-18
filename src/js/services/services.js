@@ -1,6 +1,6 @@
 'use strict';
 
-var app = angular.module('Visor');
+var app = angular.module('Server');
 
 app.service('MyServices', function($resource, $httpParamSerializerJQLike) {
     var service = $resource('URL/:action', null,
@@ -18,7 +18,6 @@ app.service('MyServices', function($resource, $httpParamSerializerJQLike) {
                       return $httpParamSerializerJQLike(data);
                   }},
       });
-
 
     return service;
   })

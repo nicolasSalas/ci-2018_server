@@ -5,7 +5,6 @@ var app = express();
 var mysql = require('mysql');
 var http = require("http");
 
-
 app.use(express.static(path.join(__dirname,'src')));
 
 app.set('view engine', 'ejs');
@@ -18,19 +17,20 @@ app.use(function(req, res, next) {
 });
 
 app.get('/',function(request,resp,next){
-
 resp.render('index')
-
 });
 
-var ConsultaCupo = require('./routes/ConsultaCupo.js');
+var _Login = require('./Server/_Login.js');
+var _Insert = require('./Server/_Insert.js');
+var _Delete = require('./Server/_Delete.js');
+var _Update = require('./Server/_Update.js');
+var _Read = require('./Server/_Read.js');
 
-app.use('/webservices', ConsultaCupo);
+app.use('/webservices', _Insert, _Update, _Delete, _Read, _Login);
 
 app.listen(8081, function(){
   console.log('El servidor Esta En llamas!');
 });
-
 
 var connection = mysql.createConnection({
 
@@ -52,4 +52,3 @@ connection.connect(function(err) {
 });
 
 connection.end();
-
