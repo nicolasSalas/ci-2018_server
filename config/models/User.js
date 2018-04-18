@@ -17,7 +17,7 @@ const User = sequelize.define('User', {
         autoIncrement: true,
         primaryKey: true
     },
-    name: {
+    first_name: {
         type: Sequelize.STRING,
         field: 'first_name'
     },
