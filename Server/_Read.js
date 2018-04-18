@@ -2,7 +2,6 @@ const express = require('express');
 const Sequelize = require('Sequelize');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const validator = require('validator');
 const urlencodedParser = bodyParser.urlencoded({extended: false})
 const services = require('../config/functions/token');
 const User = require('../config/models/User');
