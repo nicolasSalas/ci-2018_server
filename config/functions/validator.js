@@ -1,3 +1,6 @@
+import { join } from 'path';
+import { isDate } from 'util';
+
 const Joi = require('joi');
 
 const Insert = {
@@ -6,7 +9,7 @@ const Insert = {
     last_name: Joi.string().required(),
     email: Joi.string().email().required(),
     password: Joi.string().regex(/^.{6,30}$/).required(),
-    username: Joi.string().required()
+    username: Joi.string().required(),
 }
 
 const Delete = {
@@ -22,9 +25,25 @@ const Login = {
     password: Joi.string().required(),
 }
 
-module.exports = { 
+const InsertQuestions = {
+    question: Joi.string().required(),
+    description: Joi.string().required(),
+    createdAt: Joi.Date.required(),
+    updatedAt: Joi.Date.required(),
+}
+
+const InsertAlternatives = {
+    altertanive: Joi.string().require(),
+    createdAt: Joi.Date.required(),
+    updatedAt: Joi.Date.required(),
+}
+
+module.exports = {
     Insert,
     Delete,
     Update,
-    Login
+    Login,
+    InsertQuestions,
+    InsertAlternatives
+
 };

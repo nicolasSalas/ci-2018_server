@@ -24,6 +24,48 @@ module.exports = {
                 });
             });
     },
+    insertQuestions: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
+    insertAlternatives: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
     update: (propiety, data, res) => {
         propiety
             .sync()
@@ -31,10 +73,10 @@ module.exports = {
                 () => propiety.update({
                     username: data.username
                 }, {
-                    where: {
-                        id: data.id
-                    }
-                })
+                        where: {
+                            id: data.id
+                        }
+                    })
             )
             .then(result => {
                 res.status(200);
@@ -76,21 +118,21 @@ module.exports = {
     },
     Read: (propiety, res) => {
         propiety
-        .sync()
-        .then(() => propiety.findAll())
-        .then(result => {
-            res.status(200);
-            res.json({
-                success: true,
-                data : result
+            .sync()
+            .then(() => propiety.findAll())
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    data: result
+                })
             })
-        })
-        .catch(error => {
-            res.status(500);
-            res.json({
-                error: error,
-                stackError: error.stack
-            });
-        })
+            .catch(error => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            })
     }
 }

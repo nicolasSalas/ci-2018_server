@@ -10,36 +10,36 @@ const sequelize = new Sequelize('indexcorp', 'root', '', {
     },
 })
 
-const User = sequelize.define('User', {
+const QuestionsAlternative = sequelize.define('QuestionsAlternative', {
     id: {
         type: Sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
-    first_name: {
-        type: Sequelize.STRING,
-        field: 'first_name'
+    questionId: {
+        type: Sequelize.INTEGER,
+        field: 'questionId'
+
     },
-    last_name: {
+    alternativeId: {
         type: Sequelize.STRING,
-        field: 'last_name'
+        field: 'alternativeId'
     },
-    email: {
-        type: Sequelize.STRING,
-        field: 'email'
+    createdAt: {
+        type: Sequelize.Date,
+        field: 'createdAt'
     },
-    password: {
-        type: Sequelize.STRING,
-        field: 'password'
+
+    updateAt: {
+        type: Sequelize.DATE,
+        field: 'updateAt'
+
     },
-    username: {
-        type: Sequelize.STRING,
-        field: 'username'
-    }
-}, {
+},
+    {
         freezeTableName: true,
         operatorsAliases: false
     });
 
-module.exports = User;
+module.exports = QuestionsAlternative;
