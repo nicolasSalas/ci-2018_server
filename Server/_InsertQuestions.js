@@ -6,7 +6,7 @@ const Joi = require('joi');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const Questions = require('../config/models/Questions');
 const CRUD = require('../config/functions');
-const { Insert } = require('../config/functions/validator');
+const { InsertQuestions } = require('../config/functions/validator');
 
 router.post('/InsertQuestions', urlencodedParser, (req, res) => {
 
@@ -17,7 +17,7 @@ router.post('/InsertQuestions', urlencodedParser, (req, res) => {
 
     let data = req.body;
 
-    const { error, value } = Joi.validate(data, Insert);
+    const { error, value } = Joi.validate(data, InsertQuestions);
 
     if (error) {
         res

@@ -1,6 +1,6 @@
 
 const Sequelize = require('Sequelize');
-const sequelize = new Sequelize('onlytesting.cbrk2u0eo6tl.sa-east-1.rds.amazonaws.com',
+const sequelize = new Sequelize('onlytesting.cbrk2u0eo6tl.sa-east-1.rds.amazonaws.com/testing',
     'Masterhard',
     'index_0011',
     {

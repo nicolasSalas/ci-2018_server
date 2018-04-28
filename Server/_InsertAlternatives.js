@@ -6,7 +6,7 @@ const Joi = require('joi');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const Alternatives = require('../config/models/Alternatives');
 const CRUD = require('../config/functions');
-const { Insert } = require('../config/functions/validator');
+const { InsertAlternatives } = require('../config/functions/validator');
 
 router.post('/InsertAlternatives', urlencodedParser, (req, res) => {
 
@@ -17,7 +17,7 @@ router.post('/InsertAlternatives', urlencodedParser, (req, res) => {
 
     let data = req.body;
 
-    const { error, value } = Joi.validate(data, Insert);
+    const { error, value } = Joi.validate(data, InsertAlternatives);
 
     if (error) {
         res
