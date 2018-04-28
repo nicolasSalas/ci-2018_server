@@ -1,14 +1,6 @@
 
 const Sequelize = require('Sequelize');
-const sequelize = new Sequelize('indexcorp', 'root', '', {
-    dialect: 'mysql',
-    operatorsAliases: false, // disable aliases
-    pool: {
-        max: 5,
-        min: 0,
-        idle: 10000
-    },
-})
+const sequelize = require('../conection');
 
 const User = sequelize.define('User', {
     id: {
