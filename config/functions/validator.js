@@ -29,7 +29,7 @@ const InsertQuestions = {
 }
 
 const InsertAlternatives = {
-    altertanive: Joi.string().required(),
+    alternative: Joi.string().required(),
 }
 
 module.exports = {
