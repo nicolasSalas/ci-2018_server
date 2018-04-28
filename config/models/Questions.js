@@ -25,16 +25,6 @@ const Questions = sequelize.define('Questions', {
         type: Sequelize.STRING,
         field: 'description'
     },
-    createdAt: {
-        type: Sequelize.Date,
-        field: 'createdAt'
-    },
-
-    updatedAt: {
-        type: Sequelize.DATE,
-        field: 'updatedAt'
-
-    },
 },
     {
         freezeTableName: true,

@@ -1,6 +1,3 @@
-import { join } from 'path';
-import { isDate } from 'util';
-
 const Joi = require('joi');
 
 const Insert = {
@@ -28,14 +25,11 @@ const Login = {
 const InsertQuestions = {
     question: Joi.string().required(),
     description: Joi.string().required(),
-    createdAt: Joi.Date.required(),
-    updatedAt: Joi.Date.required(),
+
 }
 
 const InsertAlternatives = {
-    altertanive: Joi.string().require(),
-    createdAt: Joi.Date.required(),
-    updatedAt: Joi.Date.required(),
+    altertanive: Joi.string().required(),
 }
 
 module.exports = {

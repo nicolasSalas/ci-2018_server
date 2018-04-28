@@ -15,7 +15,7 @@ gulp.task('serve',['run'], function() {
         logPrefix: "Snuuper",
         notify: true,
         logConnections: true,
-        proxy: "localhost:8081"
+        proxy: "localhost:8085"
     });
 
  gulp.watch("./src/view/*.html").on('change', bs.reload);

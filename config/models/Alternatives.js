@@ -22,16 +22,6 @@ const Alternative = sequelize.define('Alternatives', {
         field: 'alternative'
 
     },
-    createdAt: {
-        type: Sequelize.Date,
-        field: 'createdAt'
-    },
-
-    updatedAt: {
-        type: Sequelize.DATE,
-        field: 'updatedAt'
-
-    },
 },
     {
         freezeTableName: true,

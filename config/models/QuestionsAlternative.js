@@ -26,16 +26,6 @@ const QuestionsAlternative = sequelize.define('QuestionsAlternative', {
         type: Sequelize.STRING,
         field: 'alternativeId'
     },
-    createdAt: {
-        type: Sequelize.Date,
-        field: 'createdAt'
-    },
-
-    updateAt: {
-        type: Sequelize.DATE,
-        field: 'updateAt'
-
-    },
 },
     {
         freezeTableName: true,

@@ -4,7 +4,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const Joi = require('joi');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
-const Alternatives = require('../config/models/Alternative');
+const Alternatives = require('../config/models/Alternatives');
 const CRUD = require('../config/functions');
 const { Insert } = require('../config/functions/validator');
 

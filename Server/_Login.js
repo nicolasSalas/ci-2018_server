@@ -16,7 +16,6 @@ router.post('/LoggingIn', urlencodedParser, (req, res) => {
     }
 
     let data = req.body;
-
     const {error, value} = Joi.validate(data, Login);
 
     if (error) {
