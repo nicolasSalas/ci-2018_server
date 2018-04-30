@@ -1,8 +1,8 @@
 
 const Sequelize = require('Sequelize');
-const sequelize = new Sequelize('testing', 'Masterhard', 'index_0011',
+const sequelize = new Sequelize('fortesting', 'dev', 'index_0011',
     {
-        host: 'onlytesting.cbrk2u0eo6tl.sa-east-1.rds.amazonaws.com',
+        host: 'testing.cob64ast3qap.us-west-2.rds.amazonaws.com',
         dialect: 'mysql',
         operatorsAliases: false, // disable aliases
         pool: {
