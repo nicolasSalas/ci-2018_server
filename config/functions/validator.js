@@ -1,6 +1,7 @@
 const Joi = require('joi');
 
-const Insert = {
+const InsertUser = {
+
     user: Joi.string().required(),
     password: Joi.string().regex(/^.{6,30}$/).required(),
 }
@@ -30,7 +31,7 @@ const InsertAnswers = {
 
 const InsertPerson = {
     name: Joi.string().required(),
-    last_name: Joi.string().required,
+    last_name: Joi.string().required(),
     rut: Joi.string().required(),
 }
 const InsertEnterprise = {
@@ -41,7 +42,7 @@ const InsertQuestionnaire = {
 }
 
 module.exports = {
-    Insert,
+    InsertUser,
     Delete,
     Update,
     Login,

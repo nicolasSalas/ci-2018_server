@@ -21,9 +21,9 @@ app.get('/', function (request, resp, next) {
 });
 
 var _Login = require('./Server/_Login.js');
-var _Insert = require('./Server/_Insert.js');
-var _Delete = require('./Server/_Delete.js');
-var _Update = require('./Server/_Update.js');
+var _InsertUser = require('./Server/_InsertUser');
+var _Delete = require('./Server/_Delete');
+var _Update = require('./Server/_Update');
 var _Read = require('./Server/_Read.js');
 var _InsertQuestions = require('./Server/_InsertQuestions');
 var _InsertAnswers = require('./Server/_InsertAnswers');
@@ -31,7 +31,7 @@ var _InsertEnterprise = require('./Server/_InsertEnterprise');
 var _InsertPerson = require('./Server/_InsertPerson');
 var _InsertQuestionnaire = require('./Server/_InsertQuestionnaire');
 
-app.use('/webservices', _Insert, _Update, _Delete, _Read, _Login, _InsertQuestions, _InsertAnswers, _InsertEnterprise, _InsertPerson, _InsertQuestionnaire);
+app.use('/webservices', _InsertUser, _Update, _Delete, _Read, _Login, _InsertQuestions, _InsertAnswers, _InsertEnterprise, _InsertPerson, _InsertQuestionnaire);
 
 app.listen(8085, function () {
   console.log('El servidor Esta En llamas!');

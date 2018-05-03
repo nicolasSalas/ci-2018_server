@@ -15,4 +15,4 @@ const Questionnaire = sequelize.define('Questionnaire', {
         operatorsAliases: false
     });
 
-module.exports = User;
+module.exports = Questionnaire;

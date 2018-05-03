@@ -6,9 +6,9 @@ const Joi = require('joi');
 const urlencodedParser = bodyParser.urlencoded({extended: false})
 const User = require('../config/models/User');
 const CRUD = require('../config/functions');
-const { Insert } = require('../config/functions/validator');
+const { InsertUser } = require('../config/functions/validator');
 
-router.post('/Insert', urlencodedParser, (req, res) => {
+router.post('/InsertUser', urlencodedParser, (req, res) => {
 
     if (!req.body || req.body.length === 0) {
         console.log('request body not found');
@@ -17,14 +17,14 @@ router.post('/Insert', urlencodedParser, (req, res) => {
     
     let data = req.body;
 
-    const {error, value} = Joi.validate(data, Insert);
+    const {error, value} = Joi.validate(data, InsertUser);
 
     if (error) {
         res
             .status(401) 
             .json({success: false, error: error.details});
     } else {
-        CRUD.insert(User, data, res);
+        CRUD.insertUser(User, data, res);
     }
 });
 

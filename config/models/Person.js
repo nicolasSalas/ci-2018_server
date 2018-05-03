@@ -13,17 +13,20 @@ const Person = sequelize.define('Person', {
         type: Sequelize.STRING,
         field: 'name'
 
-    }, last_name: {
+    }, 
+    last_name: {
         type: Sequelize.STRING,
         field: 'last_name'
-    }, rut: {
+    }, 
+    rut: {
         type: Sequelize.STRING,
         field: 'rut'
     },
 },
     {
         freezeTableName: true,
-        operatorsAliases: false
+        operatorsAliases: false,
+        underscored: true
     });
 
 module.exports = Person;
