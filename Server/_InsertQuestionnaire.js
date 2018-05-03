@@ -4,11 +4,11 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const Joi = require('joi');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
-const Alternatives = require('../config/models/Alternatives');
+const Quiestionnaire = require('../config/models/Questionnaire');
 const CRUD = require('../config/functions');
-const { InsertAlternatives } = require('../config/functions/validator');
+const { InsertQuestionnaire } = require('../config/functions/validator');
 
-router.post('/InsertAlternatives', urlencodedParser, (req, res) => {
+router.post('/InsertQuestionnaire', urlencodedParser, (req, res) => {
 
     if (!req.body || req.body.length === 0) {
         console.log('request body not found');
@@ -17,14 +17,16 @@ router.post('/InsertAlternatives', urlencodedParser, (req, res) => {
 
     let data = req.body;
 
-    const { error, value } = Joi.validate(data, InsertAlternatives);
+    const { error, value } = Joi.validate(data, InsertQuestionnaire
+    );
 
     if (error) {
         res
             .status(401)
             .json({ success: false, error: error.details });
     } else {
-        CRUD.insert(Alternatives, data, res);
+        CRUD.insert(Quiestionnaire
+            , data, res);
     }
 });
 

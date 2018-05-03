@@ -1,12 +1,8 @@
 const Joi = require('joi');
 
 const Insert = {
-
-    first_name: Joi.string().required(),
-    last_name: Joi.string().required(),
-    email: Joi.string().email().required(),
+    user: Joi.string().required(),
     password: Joi.string().regex(/^.{6,30}$/).required(),
-    username: Joi.string().required(),
 }
 
 const Delete = {
@@ -28,8 +24,20 @@ const InsertQuestions = {
 
 }
 
-const InsertAlternatives = {
-    alternative: Joi.string().required(),
+const InsertAnswers = {
+    answer: Joi.string().required(),
+}
+
+const InsertPerson = {
+    name: Joi.string().required(),
+    last_name: Joi.string().required,
+    rut: Joi.string().required(),
+}
+const InsertEnterprise = {
+    name: Joi.string().required(),
+}
+
+const InsertQuestionnaire = {
 }
 
 module.exports = {
@@ -38,6 +46,8 @@ module.exports = {
     Update,
     Login,
     InsertQuestions,
-    InsertAlternatives
-
+    InsertAnswers,
+    InsertPerson,
+    InsertEnterprise,
+    InsertQuestionnaire
 };

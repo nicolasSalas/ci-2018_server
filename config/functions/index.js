@@ -45,7 +45,67 @@ module.exports = {
                 });
             });
     },
-    insertAlternatives: (propiety, data, res) => {
+    insertAnswers: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    }, InsertPerson: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    }, InsertEnterprise: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    }, InsertQuestionnaire: (propiety, data, res) => {
         propiety
             .sync()
             .then(

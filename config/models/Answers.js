@@ -2,24 +2,22 @@
 const Sequelize = require('Sequelize');
 const sequelize = require('../conection');
 
-const User = sequelize.define('User', {
+const Answers = sequelize.define('Answers', {
     id: {
         type: Sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
-    user: {
+    answer: {
         type: Sequelize.STRING,
-        field: 'user'
+        field: 'answer'
+
     },
-    password: {
-        type: Sequelize.STRING,
-        field: 'password'
-    },
-}, {
+},
+    {
         freezeTableName: true,
         operatorsAliases: false
     });
 
-module.exports = User;
+module.exports = Answers;
