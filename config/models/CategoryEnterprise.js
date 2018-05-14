@@ -1,11 +1,10 @@
 
 const Sequelize = require('Sequelize');
 const sequelize = require('../conection');
-const Questions = require('./Questions');
-const Answers = require('./Answers');
+const Category = require('./Category');
+const Enterprise = require('./Enterprise');
 
-
-const QuestionsAlternative = sequelize.define('QuestionsAlternative', {
+const CategoryEnterprise = sequelize.define('CategoryEnterprise', {
     id: {
         type: Sequelize.INTEGER,
         field: 'id',
@@ -18,7 +17,8 @@ const QuestionsAlternative = sequelize.define('QuestionsAlternative', {
         operatorsAliases: false
     });
 
-QuestionsAlternative.belongsTo(Questions);
-QuestionsAlternative.belongsTo(Answers);
 
-module.exports = QuestionsAlternative;
+CategoryEnterprise.belongsTo(Category);
+CategoryEnterprise.belongsTo(Enterprise);
+
+module.exports = CategoryEnterprise;

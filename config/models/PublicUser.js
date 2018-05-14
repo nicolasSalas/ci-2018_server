@@ -1,28 +1,24 @@
 
 const Sequelize = require('Sequelize');
 const sequelize = require('../conection');
+const QuestionAlternative = require('./QuestionAlternative');
 const Person = require('./Person');
 
-const User = sequelize.define('User', {
+const PublicUser = sequelize.define('PublicUser', {
     id: {
         type: Sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
-        primaryKey: true,
+        primaryKey: true
     },
-    user: {
-        type: Sequelize.STRING,
-        field: 'user'
-    },
-    password: {
-        type: Sequelize.STRING,
-        field: 'password'
-    },
-}, {
+},
+    {
         freezeTableName: true,
         operatorsAliases: false
     });
 
-    User.belongsTo(Person);
 
-module.exports = User;
+PublicUser.belongsTo(QuestionsAlternative);
+PublicUser.belongsTo(Person);
+
+module.exports = PublicUser;

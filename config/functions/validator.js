@@ -1,9 +1,8 @@
 const Joi = require('joi');
 
-const InsertUser = {
+const InsertPrivateUser = {
     PersonId: Joi.number().integer().required(),
-    user: Joi.string().required(),
-    password: Joi.string().regex(/^.{6,30}$/).required(),
+    QuestionnaireId: Joi.number().integer().required()
 }
 
 const Delete = {
@@ -18,15 +17,36 @@ const Login = {
     username: Joi.string().required(),
     password: Joi.string().required(),
 }
+const InsertLink = {
+    enterpriseId: Joi.number().integer().required(),
+    token: Joi.string().required(),
+    url: Joi.string().required(),
+}
 
 const InsertQuestions = {
     question: Joi.string().required(),
     description: Joi.string().required(),
 
 }
+const InsertCategory = {
+    categoryTipe: Joi.string().required(),
+}
+const InsertCategoryEnterprise = {
+    EnterpriseId: Joi.integer().required(),
+    CategoryId: Joi.integer().required()
+}
+const InsertQuestionsAlternative = {
+    QuestionsId: Joi.number().integer().required(),
+    AnswersId: Joi.number().integer().required(),
+
+}
 
 const InsertAnswers = {
     answer: Joi.string().required(),
+}
+const InsertPublicUser = {
+    PersonId: Joi.number().integer().required(),
+    QuestionsAlternativeId: Joi.number().integer.required()
 }
 
 const InsertPerson = {
@@ -39,10 +59,12 @@ const InsertEnterprise = {
 }
 
 const InsertQuestionnaire = {
+    QuestionsAlternative: Joi.number().integer().required(),
+    EnterpriseId: Joi.number().integer().required(),
 }
 
 module.exports = {
-    InsertUser,
+    InsertPrivateUser,
     Delete,
     Update,
     Login,
@@ -50,5 +72,9 @@ module.exports = {
     InsertAnswers,
     InsertPerson,
     InsertEnterprise,
-    InsertQuestionnaire
+    InsertQuestionnaire,
+    InsertLink,
+    InsertPublicUser,
+    InsertCategory,
+    InsertCategoryEnterprise
 };

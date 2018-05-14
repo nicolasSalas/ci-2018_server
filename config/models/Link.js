@@ -1,16 +1,22 @@
 
 const Sequelize = require('Sequelize');
 const sequelize = require('../conection');
-const Questions = require('./Questions');
-const Answers = require('./Answers');
+const Enterprise = require('./Enterprise');
 
-
-const QuestionsAlternative = sequelize.define('QuestionsAlternative', {
+const Link = sequelize.define('Link', {
     id: {
         type: Sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
+    },
+    token: {
+        type: Sequelize.STRING,
+        field: 'token'
+    },
+    url: {
+        type: Sequelize.STRING,
+        field: 'url'
     },
 },
     {
@@ -18,7 +24,7 @@ const QuestionsAlternative = sequelize.define('QuestionsAlternative', {
         operatorsAliases: false
     });
 
-QuestionsAlternative.belongsTo(Questions);
-QuestionsAlternative.belongsTo(Answers);
 
-module.exports = QuestionsAlternative;
+Link.belongsTo(Enterprise);
+
+module.exports = Link;

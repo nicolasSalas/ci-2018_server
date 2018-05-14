@@ -3,7 +3,7 @@ const services = require('./token');
 
 module.exports = {
 
-    insertUser: (propiety, data, res) => {
+    insertPrivateUser: (propiety, data, res) => {
         propiety
             .sync()
             .then(
@@ -44,8 +44,90 @@ module.exports = {
                     stackError: error.stack
                 });
             });
+
+    }, InsertLink: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    }, InsertPublicUser: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
     },
-    insertAnswers: (propiety, data, res) => {
+    InsertAnswers: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
+    InsertCategory: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    }, InsertCategoryEnterprise: (propiety, data, res) => {
         propiety
             .sync()
             .then(
@@ -86,6 +168,26 @@ module.exports = {
                 });
             });
     }, InsertEnterprise: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    }, InsertQuestionAlternative: (propiety, data, res) => {
         propiety
             .sync()
             .then(

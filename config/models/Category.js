@@ -1,21 +1,21 @@
 
 const Sequelize = require('Sequelize');
 const sequelize = require('../conection');
-const QuestionAlternative = require('./QuestionsAlternative');
-const Enterprise = require('./Enterprise');
 
-const Questionnaire = sequelize.define('Questionnaire', {
+const Category = sequelize.define('Category', {
     id: {
         type: Sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
-
+    categoryTipe: {
+        type: Sequelize.STRING,
+        field: 'first_name'
+    },
 }, {
         freezeTableName: true,
         operatorsAliases: false
     });
-Questionnaire.belongsTo(QuestionAlternative);
-Questionnaire.belongsTo(Enterprise);
-module.exports = Questionnaire;
+
+module.exports = Category;
