@@ -25,8 +25,7 @@ const Person = sequelize.define('Person', {
 },
     {
         freezeTableName: true,
-        operatorsAliases: false,
-        underscored: true
+        operatorsAliases: false
     });
 
 module.exports = Person;

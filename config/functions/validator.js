@@ -1,7 +1,7 @@
 const Joi = require('joi');
 
 const InsertUser = {
-
+    PersonId: Joi.number().integer().required(),
     user: Joi.string().required(),
     password: Joi.string().regex(/^.{6,30}$/).required(),
 }

@@ -9,11 +9,6 @@ const User = sequelize.define('User', {
         field: 'id',
         autoIncrement: true,
         primaryKey: true,
-        foreignKey: true,
-        references: {
-          model: 'Person',
-          key: 'id'
-        }
     },
     user: {
         type: Sequelize.STRING,
