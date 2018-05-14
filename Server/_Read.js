@@ -2,12 +2,12 @@ const express = require('express');
 const Sequelize = require('Sequelize');
 const router = express.Router();
 const bodyParser = require('body-parser');
-const urlencodedParser = bodyParser.urlencoded({extended: false})
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const services = require('../config/functions/token');
-const User = require('../config/models/User');
+const PrivateUser = require('../config/models/PrivateUser');
 const CRUD = require('../config/functions');
 
-router.post('/Read', urlencodedParser,  (req, res) => {
+router.post('/Read', urlencodedParser, (req, res) => {
 
   if (!req.body || req.body.length === 0) {
     console.log('request body not found');
@@ -15,8 +15,8 @@ router.post('/Read', urlencodedParser,  (req, res) => {
   }
 
   let data = req.body;
-  CRUD.Read(User, res);
-  
+  CRUD.Read(PrivateUser, res);
+
   // services.decodeToken(data.token)
   // .then(res => {
   //   console.log(res)

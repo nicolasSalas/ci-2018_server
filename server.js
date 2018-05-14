@@ -20,7 +20,7 @@ app.get('/', function (request, resp, next) {
   resp.render('index')
 });
 
-var _Login = require('./Server/_Login.js');
+//var _Login = require('./Server/_Login.js');
 var _InsertPrivateUser = require('./Server/_InsertPrivateUser');
 var _Delete = require('./Server/_Delete');
 var _Update = require('./Server/_Update');
@@ -31,12 +31,12 @@ var _InsertEnterprise = require('./Server/_InsertEnterprise');
 var _InsertPerson = require('./Server/_InsertPerson');
 var _InsertQuestionnaire = require('./Server/_InsertQuestionnaire');
 var _InsertLink = require('./Server/_InsertLink');
-var _InserPublicUser = require('./Server/_InsertPublicUser');
+var _InsertPublicUser = require('./Server/_InsertPublicUser');
 var _InsertQuestionsAlternative = require('./Server/_InsertQuestionsAlternative');
 var _InsertCategory = require('./Server/_InsertCategory');
 var _InsertCategoryEnterprise = require('./Server/_InsertCategoryEnterprise');
 
-app.use('/webservices', _InsertPrivateUser, _Update, _Delete, _Read, _Login, _InsertQuestions, _InsertAnswers, _InsertEnterprise, _InsertPerson, _InsertQuestionnaire, _InsertLink, _InsertPublicUser, _InsertQuestionsAlternative, _InsertCategory, _InsertCategoryEnterprise);
+app.use('/webservices', _InsertPrivateUser, _Update, _Delete, _Read, _InsertQuestions, _InsertAnswers, _InsertEnterprise, _InsertPerson, _InsertQuestionnaire, _InsertLink, _InsertPublicUser, _InsertQuestionsAlternative, _InsertCategory, _InsertCategoryEnterprise);
 
 app.listen(8085, function () {
   console.log('El servidor Esta En llamas!');

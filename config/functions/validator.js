@@ -32,8 +32,8 @@ const InsertCategory = {
     categoryTipe: Joi.string().required(),
 }
 const InsertCategoryEnterprise = {
-    EnterpriseId: Joi.integer().required(),
-    CategoryId: Joi.integer().required()
+    EnterpriseId: Joi.number().integer().required(),
+    CategoryId: Joi.number().integer().required(),
 }
 const InsertQuestionsAlternative = {
     QuestionsId: Joi.number().integer().required(),
@@ -46,7 +46,7 @@ const InsertAnswers = {
 }
 const InsertPublicUser = {
     PersonId: Joi.number().integer().required(),
-    QuestionsAlternativeId: Joi.number().integer.required()
+    QuestionsAlternativeId: Joi.number().integer().required()
 }
 
 const InsertPerson = {

@@ -3,7 +3,6 @@ const Sequelize = require('Sequelize');
 const sequelize = require('../conection');
 const Person = require('./Person');
 const Questionnaire = require('./Questionnaire');
-const Person = require('./Person');
 
 const PrivateUser = sequelize.define('PrivateUser', {
     id: {
@@ -18,6 +17,6 @@ const PrivateUser = sequelize.define('PrivateUser', {
     });
 
 PrivateUser.belongsTo(Person);
-PrivateUserUser.belongsTo(Questionnaire);
+PrivateUser.belongsTo(Questionnaire);
 
 module.exports = PrivateUser;

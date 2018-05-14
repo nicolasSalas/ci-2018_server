@@ -1,7 +1,7 @@
 
 const Sequelize = require('Sequelize');
 const sequelize = require('../conection');
-const QuestionAlternative = require('./QuestionAlternative');
+const QuestionsAlternative = require('./QuestionsAlternative');
 const Person = require('./Person');
 
 const PublicUser = sequelize.define('PublicUser', {

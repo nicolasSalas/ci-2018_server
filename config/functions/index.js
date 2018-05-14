@@ -3,7 +3,7 @@ const services = require('./token');
 
 module.exports = {
 
-    insertPrivateUser: (propiety, data, res) => {
+    InsertPrivateUser: (propiety, data, res) => {
         propiety
             .sync()
             .then(
@@ -24,7 +24,7 @@ module.exports = {
                 });
             });
     },
-    insertQuestions: (propiety, data, res) => {
+    InsertQuestions: (propiety, data, res) => {
         propiety
             .sync()
             .then(
