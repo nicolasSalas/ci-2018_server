@@ -13,7 +13,7 @@ router.post('/InsertQuestionsAlternative', urlencodedParser, (req, res) => {
     if (!req.body || req.body.length === 0) {
         console.log('request body not found');
         return res.sendStatus(400);
-    }
+    } 
 
     let data = req.body;
 

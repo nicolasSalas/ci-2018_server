@@ -76,5 +76,6 @@ module.exports = {
     InsertLink,
     InsertPublicUser,
     InsertCategory,
-    InsertCategoryEnterprise
+    InsertCategoryEnterprise,
+    InsertQuestionsAlternative
 };
