@@ -9,10 +9,38 @@ const Enterprise = sequelize.define('Enterprise', {
         autoIncrement: true,
         primaryKey: true
     },
-    name: {
+    Contact: {
         type: Sequelize.STRING,
-        field: 'first_name'
+        field: 'Contact'
     },
+    Position: {
+        type: Sequelize.STRING,
+        field: 'Position'
+    },
+    Mail: {
+        type: Sequelize.STRING,
+        field: 'Mail'
+    },
+    Company_name: {
+        type: Sequelize.STRING,
+        field: 'company_name'
+    },
+    Address: {
+        type: Sequelize.STRING,
+        field: 'Address'
+    },
+    Activity_sector: {
+        type: Sequelize.STRING,
+        field: 'Activity_sector'
+    },
+    Municipality: {
+        type: Sequelize.STRING,
+        field: 'Municipality'
+    },
+    Company_size: {
+        type: Sequelize.INTEGER,
+        field: 'Company_size'
+    }
 }, {
         freezeTableName: true,
         operatorsAliases: false

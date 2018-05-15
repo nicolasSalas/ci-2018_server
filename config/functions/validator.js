@@ -54,8 +54,15 @@ const InsertPerson = {
     last_name: Joi.string().required(),
     rut: Joi.string().required(),
 }
-const InsertEnterprise = {
-    name: Joi.string().required(),
+const InsertEnterprise = { 
+    Contact: Joi.string().required(),
+    Position: Joi.string().required(),
+    Mail: Joi.string().email().required(),
+    Company_name: Joi.string().required(),
+    Address: Joi.string().required(),
+    Activity_sector: Joi.string().required(),
+    Municipality: Joi.string().required(),
+    Company_size: Joi.number().required(),
 }
 
 const InsertQuestionnaire = {

@@ -45,7 +45,8 @@ module.exports = {
                 });
             });
 
-    }, InsertLink: (propiety, data, res) => {
+    }, 
+    InsertLink: (propiety, data, res) => {
         propiety
             .sync()
             .then(
@@ -65,7 +66,8 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, InsertPublicUser: (propiety, data, res) => {
+    }, 
+    InsertPublicUser: (propiety, data, res) => {
         propiety
             .sync()
             .then(
@@ -127,7 +129,8 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, InsertCategoryEnterprise: (propiety, data, res) => {
+    }, 
+    InsertCategoryEnterprise: (propiety, data, res) => {
         propiety
             .sync()
             .then(
@@ -147,7 +150,8 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, InsertPerson: (propiety, data, res) => {
+    }, 
+    InsertPerson: (propiety, data, res) => {
         propiety
             .sync()
             .then(
@@ -167,7 +171,8 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, InsertEnterprise: (propiety, data, res) => {
+    }, 
+    InsertEnterprise: (propiety, data, res) => {
         propiety
             .sync()
             .then(
@@ -187,7 +192,8 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, InsertQuestionsAlternative: (propiety, data, res) => {
+    }, 
+    InsertQuestionsAlternative: (propiety, data, res) => {
         propiety
             .sync()
             .then(
@@ -207,7 +213,8 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, InsertQuestionnaire: (propiety, data, res) => {
+    }, 
+    InsertQuestionnaire: (propiety, data, res) => {
         propiety
             .sync()
             .then(
