@@ -187,7 +187,7 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, InsertQuestionAlternative: (propiety, data, res) => {
+    }, InsertQuestionsAlternative: (propiety, data, res) => {
         propiety
             .sync()
             .then(
