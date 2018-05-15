@@ -25,7 +25,7 @@ router.post('/InsertPerson', urlencodedParser, (req, res) => {
             .status(401)
             .json({ success: false, error: error.details });
     } else {
-        CRUD.insert(Person
+        CRUD.InsertPerson(Person
             , data, res);
     }
 });

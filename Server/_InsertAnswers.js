@@ -25,7 +25,7 @@ router.post('/InsertAnswers', urlencodedParser, (req, res) => {
             .status(401)
             .json({ success: false, error: error.details });
     } else {
-        CRUD.insert(Answers
+        CRUD.InsertAnswers(Answers
             , data, res);
     }
 });
