@@ -26,5 +26,4 @@ const Link = sequelize.define('Link', {
 
 
 Link.belongsTo(Enterprise);
-
 module.exports = Link;

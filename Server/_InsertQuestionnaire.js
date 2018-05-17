@@ -25,7 +25,7 @@ router.post('/InsertQuestionnaire', urlencodedParser, (req, res) => {
             .status(401)
             .json({ success: false, error: error.details });
     } else {
-        CRUD.insert(Quiestionnaire
+        CRUD.InsertQuestionnaire(Quiestionnaire
             , data, res);
     }
 });

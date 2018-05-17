@@ -2,6 +2,7 @@
 const Sequelize = require('Sequelize');
 const sequelize = require('../conection');
 
+
 const Questions = sequelize.define('Questions', {
     id: {
         type: Sequelize.INTEGER,

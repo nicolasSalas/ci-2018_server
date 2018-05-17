@@ -11,7 +11,7 @@ const Category = sequelize.define('Category', {
     },
     categoryTipe: {
         type: Sequelize.STRING,
-        field: 'first_name'
+        field: 'categoryTipe'
     },
 }, {
         freezeTableName: true,

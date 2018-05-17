@@ -18,7 +18,7 @@ const Login = {
     password: Joi.string().required(),
 }
 const InsertLink = {
-    enterpriseId: Joi.number().integer().required(),
+    EnterpriseId: Joi.number().integer().required(),
     token: Joi.string().required(),
     url: Joi.string().required(),
 }
@@ -54,7 +54,7 @@ const InsertPerson = {
     last_name: Joi.string().required(),
     rut: Joi.string().required(),
 }
-const InsertEnterprise = { 
+const InsertEnterprise = {
     Contact: Joi.string().required(),
     Position: Joi.string().required(),
     Mail: Joi.string().email().required(),
@@ -66,7 +66,7 @@ const InsertEnterprise = {
 }
 
 const InsertQuestionnaire = {
-    QuestionsAlternative: Joi.number().integer().required(),
+    QuestionsAlternativeId: Joi.number().integer().required(),
     EnterpriseId: Joi.number().integer().required(),
 }
 
