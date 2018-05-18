@@ -17,8 +17,7 @@ router.post('/InsertQuestionnaire', urlencodedParser, (req, res) => {
 
     let data = req.body;
 
-    const { error, value } = Joi.validate(data, InsertQuestionnaire
-    );
+    const { error, value } = Joi.validate(data, InsertQuestionnaire);
 
     if (error) {
         res

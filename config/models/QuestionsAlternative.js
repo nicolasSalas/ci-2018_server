@@ -18,7 +18,9 @@ const QuestionsAlternative = sequelize.define('QuestionsAlternative', {
         operatorsAliases: false
     });
 
-QuestionsAlternative.belongsTo(Questions);
-QuestionsAlternative.belongsTo(Answers);
+/* QuestionsAlternative.belongsTo(Questions);
+QuestionsAlternative.belongsTo(Answers); */
 
+QuestionsAlternative.belongsTo(Questions, { foreignKey: 'QuestionsId' });
+QuestionsAlternative.belongsTo(Answers, { foreignKey: 'AnswersId' });
 module.exports = QuestionsAlternative;
