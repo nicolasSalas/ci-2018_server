@@ -12,6 +12,20 @@ const QuestionsAlternative = sequelize.define('QuestionsAlternative', {
         autoIncrement: true,
         primaryKey: true
     },
+    QuestionsId: {
+        type: Sequelize.INTEGER,
+        references: {
+            model: "Questions",
+            key: "id"
+        }
+    },
+    AnswersId: {
+        type: Sequelize.INTEGER,
+        references: {
+            model: "Answers",
+            key: "id"
+        }
+    }
 },
     {
         freezeTableName: true,
@@ -21,6 +35,20 @@ const QuestionsAlternative = sequelize.define('QuestionsAlternative', {
 /* QuestionsAlternative.belongsTo(Questions);
 QuestionsAlternative.belongsTo(Answers); */
 
-QuestionsAlternative.belongsTo(Questions, { foreignKey: 'QuestionsId' });
-QuestionsAlternative.belongsTo(Answers, { foreignKey: 'AnswersId' });
-module.exports = QuestionsAlternative;
+QuestionsAlternative.belongsTo(Questions, { foreignKey: 'QuestionsId', targetKey: 'id' });
+QuestionsAlternative.belongsTo(Answers, { foreignKey: 'AnswersId', targetKey: 'id' });
+module.exports = QuestionsAlternative
+QuestionsAlternative.associate = models => {
+    QuestionsAlternative.belongsTo(models.question, {
+        foreignKey: {
+            allowNull: false
+        }
+    });
+    QuestionsAlternative.belongsTo(models.alternative, {
+        foreignKey: {
+            allowNull: false
+        }
+    });
+    QuestionsAlternative.hasMany(models.answer);
+};
+return QuestionsAlternative;
