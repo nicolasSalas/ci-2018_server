@@ -1,6 +1,7 @@
 
 const Sequelize = require('Sequelize');
 const sequelize = require('../conection');
+const Questions = require('./Questions');
 
 const Answers = sequelize.define('Answers', {
     id: {
@@ -19,5 +20,5 @@ const Answers = sequelize.define('Answers', {
         freezeTableName: true,
         operatorsAliases: false
     });
-
+Answers.belongsTo(Questions, { foreignKey: 'QuestionsId', targetKey: 'id' });
 module.exports = Answers;

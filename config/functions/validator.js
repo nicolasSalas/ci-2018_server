@@ -43,6 +43,7 @@ const InsertQuestionsAlternative = {
 
 const InsertAnswers = {
     answer: Joi.string().required(),
+    QuestionsId: Joi.string().required(),
 }
 const InsertPublicUser = {
     PersonId: Joi.number().integer().required(),
