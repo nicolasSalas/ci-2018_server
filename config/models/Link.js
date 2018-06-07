@@ -14,6 +14,10 @@ const Link = sequelize.define('Link', {
         type: Sequelize.STRING,
         field: 'token'
     },
+    rand: {
+        type: Sequelize.STRING,
+        field: 'rand'
+    },
     url: {
         type: Sequelize.STRING,
         field: 'url'
