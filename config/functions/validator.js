@@ -20,6 +20,7 @@ const Login = {
 const InsertLink = {
     EnterpriseId: Joi.number().integer().required(),
     token: Joi.string().required(),
+    rand: Joi.string().required(),
     url: Joi.string().required(),
 }
 
