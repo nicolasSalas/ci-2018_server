@@ -52,7 +52,7 @@ gulp.task('production', function() {
   gulp.src('./views/index.ejs')
     .pipe(htmlreplace({
       base: {
-        src: 'http://testcorpindex.us-west-2.elasticbeanstalk.com/',
+        src: 'http://icorp.us-west-2.elasticbeanstalk.com/',
         tpl: '<!-- build:base --> <base href="%s"> <!-- endbuild -->'
       }
     }))
