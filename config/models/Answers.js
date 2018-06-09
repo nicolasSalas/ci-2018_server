@@ -1,17 +1,17 @@
 
-const Sequelize = require('Sequelize');
-const sequelize = require('../conection');
+const sequelize = require('sequelize');
+const connection = require('../conection');
 const Questions = require('./Questions');
 
-const Answers = sequelize.define('Answers', {
+const Answers = connection.define('Answers', {
     id: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
     answer: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'answer'
 
     },

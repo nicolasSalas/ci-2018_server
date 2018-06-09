@@ -1,12 +1,12 @@
 
-const Sequelize = require('Sequelize');
-const sequelize = require('../conection');
+const sequelize = require('sequelize');
+const connection = require('../conection');
 const QuestionsAlternative = require('./QuestionsAlternative');
 const Person = require('./Person');
 
-const PublicUser = sequelize.define('PublicUser', {
+const PublicUser = connection.define('PublicUser', {
     id: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true

@@ -1,25 +1,25 @@
 
-const Sequelize = require('Sequelize');
-const sequelize = require('../conection');
+const sequelize = require('sequelize');
+const connection = require('../conection');
 
-const Person = sequelize.define('Person', {
+const Person = connection.define('Person', {
     id: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
     name: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'name'
 
     }, 
     last_name: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'last_name'
     }, 
     rut: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'rut'
     },
 },

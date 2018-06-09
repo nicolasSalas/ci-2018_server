@@ -1,25 +1,25 @@
 
-const Sequelize = require('Sequelize');
-const sequelize = require('../conection');
+const sequelize = require('sequelize');
+const connection = require('../conection');
 const Enterprise = require('./Enterprise');
 
-const Link = sequelize.define('Link', {
+const Link = connection.define('Link', {
     id: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
     token: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'token'
     },
     rand: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'rand'
     },
     url: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'url'
     },
 },

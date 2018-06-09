@@ -1,16 +1,16 @@
 
-const Sequelize = require('Sequelize');
-const sequelize = require('../conection');
+const sequelize = require('sequelize');
+const connection = require('../conection');
 
-const Category = sequelize.define('Category', {
+const Category = connection.define('Category', {
     id: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
     categoryTipe: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'categoryTipe'
     },
 }, {
