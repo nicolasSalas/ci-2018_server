@@ -286,23 +286,27 @@ module.exports = {
             })
     },
     ReadLink: (propiety, data, res) => {
-        propiety.sync().then(() => propiety.findAll({
-            where: {
-                rand: data.rand
-            }
-        })
-        ).then(result => {
-            res.status(200);
-            res.json({
-                success: true,
-                data: result
+        propiety
+            .sync()
+            .then(() => propiety.findAll({
+                where: {
+                    rand: data.rand
+                }
+            }))
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    data: result
+                })
             })
-        }).catch(error => {
-            res.status(500);
-            res.json({
-                error: error,
-                stackError: error.stack
-            });
-        })
-    }
+            .catch(error => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            })
+    },
+
 }
