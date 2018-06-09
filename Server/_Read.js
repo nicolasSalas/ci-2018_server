@@ -4,7 +4,7 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const services = require('../config/functions/token');
-const PrivateUser = require('../config/models/PrivateUser');
+const Link = require('../config/models/Link');
 const CRUD = require('../config/functions');
 
 router.post('/Read', urlencodedParser, (req, res) => {
@@ -15,15 +15,14 @@ router.post('/Read', urlencodedParser, (req, res) => {
   }
 
   let data = req.body;
-  CRUD.Read(PrivateUser, res);
-
-  // services.decodeToken(data.token)
-  // .then(res => {
-  //   console.log(res)
-  // })
-  // .catch(err => {
-  //   console.log(err)
-  // })
+  CRUD.Read(Link, res);
+  services.decodeToken(data.token)
+    .then(res => {
+      console.log(res)
+    })
+    .catch(err => {
+      console.log(err)
+    })
 
 });
 
