@@ -13,12 +13,12 @@ router.post('/ReadLink', urlencodedParser, (req, res) => {
     console.log('request body not found');
     return res.sendStatus(400);
   }
-
   let data = req.body;
-  CRUD.ReadLink(Link, res);
+  console.log(data)
   services.decodeToken(data.token)
-    .then(res => {
-      console.log(res)
+    .then(response => {
+      CRUD.ReadLink(Link, res);
+      console.log(response)
     })
     .catch(err => {
       console.log(err)

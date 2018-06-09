@@ -9,8 +9,7 @@ const Delete = {
     id: Joi.number().integer().required()
 }
 const ReadLink = {
-    id: Joi.number().integer().required(),
-    LinkId: Joi.number().integer().required()
+    rand: Joi.string().required()
 }
 const Update = {
     id: Joi.number().integer().required(),
