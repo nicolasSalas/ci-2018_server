@@ -1,6 +1,6 @@
 
-const Sequelize = require('Sequelize');
-const sequelize = new Sequelize('fortesting', 'dev', 'index_0011',
+const sequelize = require('sequelize');
+const connection = new sequelize('fortesting', 'dev', 'index_0011',
     {
         host: 'testing.cob64ast3qap.us-west-2.rds.amazonaws.com',
         dialect: 'mysql',
@@ -12,4 +12,4 @@ const sequelize = new Sequelize('fortesting', 'dev', 'index_0011',
         },
     })
 
-module.exports = sequelize;
+module.exports = connection;

@@ -1,26 +1,26 @@
 
-const Sequelize = require('Sequelize');
-const sequelize = require('../conection');
+const sequelize = require('sequelize');
+const connection = require('../conection');
 const Questions = require('./Questions');
 const Answers = require('./Answers');
 
 
-const QuestionsAlternative = sequelize.define('QuestionsAlternative', {
+const QuestionsAlternative = connection.define('QuestionsAlternative', {
     id: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
     QuestionsId: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         references: {
             model: "Questions",
             key: "id"
         }
     },
     AnswersId: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         references: {
             model: "Answers",
             key: "id"

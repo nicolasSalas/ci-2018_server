@@ -1,12 +1,12 @@
 
-const Sequelize = require('Sequelize');
-const sequelize = require('../conection');
+const sequelize = require('sequelize');
+const connection = require('../conection');
 const Person = require('./Person');
 const Questionnaire = require('./Questionnaire');
 
-const PrivateUser = sequelize.define('PrivateUser', {
+const PrivateUser = connection.define('PrivateUser', {
     id: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true,

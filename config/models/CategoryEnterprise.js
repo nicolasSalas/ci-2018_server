@@ -1,12 +1,12 @@
 
-const Sequelize = require('Sequelize');
-const sequelize = require('../conection');
+const sequelize = require('sequelize');
+const connection = require('../conection');
 const Category = require('./Category');
 const Enterprise = require('./Enterprise');
 
-const CategoryEnterprise = sequelize.define('CategoryEnterprise', {
+const CategoryEnterprise = connection.define('CategoryEnterprise', {
     id: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true

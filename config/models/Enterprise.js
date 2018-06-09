@@ -1,44 +1,44 @@
 
-const Sequelize = require('Sequelize');
-const sequelize = require('../conection');
+const sequelize = require('sequelize');
+const connection = require('../conection');
 
-const Enterprise = sequelize.define('Enterprise', {
+const Enterprise = connection.define('Enterprise', {
     id: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
     Contact: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'Contact'
     },
     Position: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'Position'
     },
     Mail: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'Mail'
     },
     Company_name: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'company_name'
     },
     Address: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'Address'
     },
     Activity_sector: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'Activity_sector'
     },
     Municipality: {
-        type: Sequelize.STRING,
+        type: sequelize.STRING,
         field: 'Municipality'
     },
     Company_size: {
-        type: Sequelize.INTEGER,
+        type: sequelize.INTEGER,
         field: 'Company_size'
     }
 }, {

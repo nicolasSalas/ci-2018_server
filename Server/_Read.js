@@ -1,5 +1,5 @@
 const express = require('express');
-const Sequelize = require('Sequelize');
+const sequelize = require('sequelize');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
