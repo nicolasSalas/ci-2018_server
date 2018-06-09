@@ -24,7 +24,7 @@ app.get('/', function (request, resp, next) {
 var _InsertPrivateUser = require('./Server/_InsertPrivateUser');
 var _Delete = require('./Server/_Delete');
 var _Update = require('./Server/_Update');
-var _Read = require('./Server/_Read.js');
+var _Read = require('./Server/_ReadLink.js');
 var _InsertQuestions = require('./Server/_InsertQuestions');
 var _InsertAnswers = require('./Server/_InsertAnswers');
 var _InsertEnterprise = require('./Server/_InsertEnterprise');

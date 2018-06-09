@@ -45,7 +45,7 @@ module.exports = {
                 });
             });
 
-    }, 
+    },
     InsertLink: (propiety, data, res) => {
         propiety
             .sync()
@@ -66,7 +66,7 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, 
+    },
     InsertPublicUser: (propiety, data, res) => {
         propiety
             .sync()
@@ -129,7 +129,7 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, 
+    },
     InsertCategoryEnterprise: (propiety, data, res) => {
         propiety
             .sync()
@@ -150,7 +150,7 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, 
+    },
     InsertPerson: (propiety, data, res) => {
         propiety
             .sync()
@@ -171,7 +171,7 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, 
+    },
     InsertEnterprise: (propiety, data, res) => {
         propiety
             .sync()
@@ -192,7 +192,7 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, 
+    },
     InsertQuestionsAlternative: (propiety, data, res) => {
         propiety
             .sync()
@@ -213,7 +213,7 @@ module.exports = {
                     stackError: error.stack
                 });
             });
-    }, 
+    },
     InsertQuestionnaire: (propiety, data, res) => {
         propiety
             .sync()
@@ -285,23 +285,24 @@ module.exports = {
                 });
             })
     },
-    Read: (propiety, res) => {
-        propiety
-            .sync()
-            .then(() => propiety.findAll())
-            .then(result => {
-                res.status(200);
-                res.json({
-                    success: true,
-                    data: result
-                })
+    ReadLink: (propiety, data, res) => {
+        propiety.sync().then(() => propiety.findAll({
+            where: {
+                rand: data.rand
+            }
+        })
+        ).then(result => {
+            res.status(200);
+            res.json({
+                success: true,
+                data: result
             })
-            .catch(error => {
-                res.status(500);
-                res.json({
-                    error: error,
-                    stackError: error.stack
-                });
-            })
+        }).catch(error => {
+            res.status(500);
+            res.json({
+                error: error,
+                stackError: error.stack
+            });
+        })
     }
 }

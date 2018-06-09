@@ -7,7 +7,7 @@ const services = require('../config/functions/token');
 const Link = require('../config/models/Link');
 const CRUD = require('../config/functions');
 
-router.post('/Read', urlencodedParser, (req, res) => {
+router.post('/ReadLink', urlencodedParser, (req, res) => {
 
   if (!req.body || req.body.length === 0) {
     console.log('request body not found');
@@ -15,7 +15,7 @@ router.post('/Read', urlencodedParser, (req, res) => {
   }
 
   let data = req.body;
-  CRUD.Read(Link, res);
+  CRUD.ReadLink(Link, res);
   services.decodeToken(data.token)
     .then(res => {
       console.log(res)

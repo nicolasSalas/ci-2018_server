@@ -12,22 +12,19 @@ module.exports = {
             iat: moment().unix(),
             exp: moment().add(5, 'minutes').unix(),
         }
-        return jwt.encode(payload, config.SECRET_TOKEN)
+        return jwt.encode(payload, config.SECRET_TOKEN_SERVER)
     },
-
     decodeToken: (token) => {
         const decoded = new Promise((resolve, reject) => {
             try {
-                const payload = wt.decode(token, config.SECRET_TOKEN)
+                const payload = wt.decode(token, config.SECRET_TOKEN_CLIENT)
                 if (payload.exp <= moment().unix()) {
                     reject({
                         status: 401,
                         message: 'El token ha expirado'
                     })
                 }
-
                 resolve(payload.sub)
-
             } catch (error) {
                 reject({
                     status: 500,
@@ -35,8 +32,6 @@ module.exports = {
                 })
             }
         })
-
         return decoded;
     }
-
 }

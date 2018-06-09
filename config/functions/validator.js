@@ -8,6 +8,10 @@ const InsertPrivateUser = {
 const Delete = {
     id: Joi.number().integer().required()
 }
+const ReadLink = {
+    id: Joi.number().integer().required(),
+    LinkId: Joi.number().integer().required()
+}
 const Update = {
     id: Joi.number().integer().required(),
     username: Joi.string().required()
@@ -73,6 +77,7 @@ const InsertQuestionnaire = {
 }
 
 module.exports = {
+    ReadLink,
     InsertPrivateUser,
     Delete,
     Update,
