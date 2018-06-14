@@ -9,6 +9,7 @@ const CRUD = require('../config/functions');
 const { InsertLink } = require('../config/functions/validator');
 const TOKEN = require('../config/functions/token');
 
+
 router.post('/InsertLink', urlencodedParser, (req, res) => {
 
     if (!req.body || req.body.length === 0) {
@@ -22,17 +23,27 @@ router.post('/InsertLink', urlencodedParser, (req, res) => {
     );
 
 
-    let success = TOKEN.decodeToken(data.token);
 
+    let success = TOKEN.decodeToken(data.Validator);
     console.log('dato', success)
-    /* if (error) {
+
+
+    if (!success) {
+        if (error) {
+            res
+                .status(401)
+                .json({ success: false, error: error.details });
+        } else {
+            CRUD.InsertLink(Link
+                , data, res);
+        }
+    }
+    else {
         res
             .status(401)
-            .json({ success: false, error: error.details });
-    } else {
-        CRUD.InsertLink(Link
-            , data, res);
-    } */
+            .json({ success: false, error: success });
+    }
+
 });
 
 

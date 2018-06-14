@@ -15,23 +15,32 @@ module.exports = {
         return jwt.encode(payload, config.SECRET_TOKEN_SERVER)
     },
     decodeToken: (token) => {
-        const decoded = new Promise((resolve, reject) => {
-            try {
-                const payload = wt.decode(token, config.SECRET_TOKEN_CLIENT)
-                if (payload.exp <= moment().unix()) {
-                    reject({
-                        status: 401,
-                        message: 'El token ha expirado'
-                    })
-                }
-                resolve(payload.sub)
-            } catch (error) {
-                reject({
-                    status: 500,
-                    message: 'Invalid Token'
-                })
+        try {
+            let auth = jwt.decode(token, config.SECRET_TOKEN_CLIENT)
+
+            console.log(auth);
+
+            if (auth.sub === 'VALIDO') {
+                return false;
             }
-        })
-        return decoded;
+
+        } catch (e) {
+            console.log(e.toString())
+
+            switch (e.toString()) {
+                case 'Error: Token expired':
+                    return e.toString();
+                    break;
+                case 'Error: Not enough or too many segments':
+                    return e.toString();
+                    break;
+                case 'Error: Signature verification failed':
+                    return e.toString();
+                    break;
+                default:
+                    return e.toString();
+                    break;
+            }
+        }
     }
 }

@@ -22,6 +22,7 @@ const Link = connection.define('Link', {
         type: sequelize.STRING,
         field: 'url'
     },
+
 },
     {
         freezeTableName: true,

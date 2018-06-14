@@ -28,7 +28,6 @@ router.post('/InsertEnterprise', urlencodedParser, (req, res) => {
             .json({ success: false, error: error.details });
     } else {
         CRUD.InsertEnterprise(Enterprise, data, res);
-
     }
 });
 
