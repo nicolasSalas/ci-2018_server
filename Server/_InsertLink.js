@@ -21,8 +21,9 @@ router.post('/InsertLink', urlencodedParser, (req, res) => {
     const { error, value } = Joi.validate(data, InsertLink
     );
 
-    TOKEN.decodeToken()
-    let success = data.token;
+
+    let success = TOKEN.decodeToken(data.token);
+
     console.log('dato', success)
     /* if (error) {
         res
