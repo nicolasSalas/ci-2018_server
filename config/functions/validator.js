@@ -68,7 +68,8 @@ const InsertEnterprise = {
     Company_name: Joi.string().required(),
     Address: Joi.string().required(),
     Activity_sector: Joi.string().required(),
-    Municipality: Joi.string().required(),
+    City: Joi.string().required(),
+    Commune: Joi.string().required(),
     Company_size: Joi.number().required(),
 }
 

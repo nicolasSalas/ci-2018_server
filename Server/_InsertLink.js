@@ -7,6 +7,7 @@ const urlencodedParser = bodyParser.urlencoded({ extended: false })
 const Link = require('../config/models/Link');
 const CRUD = require('../config/functions');
 const { InsertLink } = require('../config/functions/validator');
+const TOKEN = require('../config/functions/token');
 
 router.post('/InsertLink', urlencodedParser, (req, res) => {
 
@@ -20,15 +21,18 @@ router.post('/InsertLink', urlencodedParser, (req, res) => {
     const { error, value } = Joi.validate(data, InsertLink
     );
 
-
-    if (error) {
+    TOKEN.decodeToken()
+    let success = data.token;
+    console.log('dato', success)
+    /* if (error) {
         res
             .status(401)
             .json({ success: false, error: error.details });
     } else {
         CRUD.InsertLink(Link
             , data, res);
-    }
+    } */
 });
+
 
 module.exports = router;

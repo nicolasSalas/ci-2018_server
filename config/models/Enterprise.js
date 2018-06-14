@@ -33,10 +33,15 @@ const Enterprise = connection.define('Enterprise', {
         type: sequelize.STRING,
         field: 'Activity_sector'
     },
-    Municipality: {
+    City: {
         type: sequelize.STRING,
-        field: 'Municipality'
+        field: 'City'
     },
+    Commune: {
+        type: sequelize.STRING,
+        field: 'Commune'
+    },
+
     Company_size: {
         type: sequelize.INTEGER,
         field: 'Company_size'
