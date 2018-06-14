@@ -109,7 +109,7 @@ module.exports = {
                 });
             });
     },
-    InsertCategory: (propiety, data, res) => {
+    InsertSector: (propiety, data, res) => {
         propiety
             .sync()
             .then(
@@ -130,7 +130,7 @@ module.exports = {
                 });
             });
     },
-    InsertCategoryEnterprise: (propiety, data, res) => {
+    InsertSubSector: (propiety, data, res) => {
         propiety
             .sync()
             .then(

@@ -2,20 +2,20 @@
 const sequelize = require('sequelize');
 const connection = require('../conection');
 
-const Category = connection.define('Category', {
+const Sector = connection.define('Sector', {
     id: {
         type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
-    categoryTipe: {
+    SectorTipe: {
         type: sequelize.STRING,
-        field: 'categoryTipe'
+        field: 'SectorTipe'
     },
 }, {
         freezeTableName: true,
         operatorsAliases: false
     });
 
-module.exports = Category;
+module.exports = Sector;

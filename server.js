@@ -33,10 +33,10 @@ var _InsertQuestionnaire = require('./Server/_InsertQuestionnaire');
 var _InsertLink = require('./Server/_InsertLink');
 var _InsertPublicUser = require('./Server/_InsertPublicUser');
 var _InsertQuestionsAlternative = require('./Server/_InsertQuestionsAlternative');
-var _InsertCategory = require('./Server/_InsertCategory');
-var _InsertCategoryEnterprise = require('./Server/_InsertCategoryEnterprise');
+var _InsertSector = require('./Server/_InsertSector');
+var _InsertSubSector = require('./Server/_InsertSubSector');
 
-app.use('/webservices', _InsertPrivateUser, _Update, _Delete, _Read, _InsertQuestions, _InsertAnswers, _InsertEnterprise, _InsertPerson, _InsertQuestionnaire, _InsertLink, _InsertPublicUser, _InsertQuestionsAlternative, _InsertCategory, _InsertCategoryEnterprise);
+app.use('/webservices', _InsertPrivateUser, _Update, _Delete, _Read, _InsertQuestions, _InsertAnswers, _InsertEnterprise, _InsertPerson, _InsertQuestionnaire, _InsertLink, _InsertPublicUser, _InsertQuestionsAlternative, _InsertSector, _InsertSubSector);
 
 app.listen(8081, function () {
   console.log('El servidor Esta En llamas!');

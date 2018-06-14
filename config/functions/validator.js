@@ -33,12 +33,13 @@ const InsertQuestions = {
     description: Joi.string().required(),
 
 }
-const InsertCategory = {
-    categoryTipe: Joi.string().required(),
+const InsertSector = {
+    SectorTipe: Joi.string().required(),
 }
-const InsertCategoryEnterprise = {
+const InsertSubSector = {
+    SubSectorTipe: Joi.string().required(),
+    SectorId: Joi.number().integer().required(),
     EnterpriseId: Joi.number().integer().required(),
-    CategoryId: Joi.number().integer().required(),
 }
 const InsertQuestionsAlternative = {
     QuestionsId: Joi.number().integer().required(),
@@ -89,7 +90,7 @@ module.exports = {
     InsertQuestionnaire,
     InsertLink,
     InsertPublicUser,
-    InsertCategory,
-    InsertCategoryEnterprise,
+    InsertSector,
+    InsertSubSector,
     InsertQuestionsAlternative
 };

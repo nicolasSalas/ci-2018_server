@@ -17,14 +17,17 @@ router.post('/InsertEnterprise', urlencodedParser, (req, res) => {
 
     let data = req.body;
 
+
+
     const { error, value } = Joi.validate(data, InsertEnterprise);
+
 
     if (error) {
         res
             .status(401)
             .json({ success: false, error: error.details });
     } else {
-        CRUD.InsertEnterprise(Enterprise, data, res); 
+        CRUD.InsertEnterprise(Enterprise, data, res);
     }
 });
 

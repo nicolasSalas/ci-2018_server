@@ -1,16 +1,20 @@
 
 const sequelize = require('sequelize');
 const connection = require('../conection');
-const Category = require('./Category');
+const Sector = require('./Sector');
 const Enterprise = require('./Enterprise');
 
-const CategoryEnterprise = connection.define('CategoryEnterprise', {
+const SubSector = connection.define('SubSector', {
     id: {
         type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
+    SubSectorTipe: {
+        type: sequelize.STRING,
+        field: 'SectorTipe'
+    }
 },
     {
         freezeTableName: true,
@@ -18,7 +22,8 @@ const CategoryEnterprise = connection.define('CategoryEnterprise', {
     });
 
 
-CategoryEnterprise.belongsTo(Category);
-CategoryEnterprise.belongsTo(Enterprise);
+SubSector.belongsTo(Sector);
+SubSector.belongsTo(Enterprise);
 
-module.exports = CategoryEnterprise;
+
+module.exports = SubSector;
