@@ -34,12 +34,11 @@ const InsertQuestions = {
 
 }
 const InsertSector = {
-    SectorTipe: Joi.string().required(),
+    SectorName: Joi.string().required(),
 }
 const InsertSubSector = {
-    SubSectorTipe: Joi.string().required(),
+    SubSectorName: Joi.string().required(),
     SectorId: Joi.number().integer().required(),
-    EnterpriseId: Joi.number().integer().required(),
 }
 const InsertQuestionsAlternative = {
     QuestionsId: Joi.number().integer().required(),
@@ -63,16 +62,18 @@ const InsertPerson = {
 }
 const InsertEnterprise = {
     Contact: Joi.string().required(),
+    SectorId: Joi.number().integer().required(),
     Position: Joi.string().required(),
     Mail: Joi.string().email().required(),
     Company_name: Joi.string().required(),
     Address: Joi.string().required(),
-    Activity_sector: Joi.string().required(),
     City: Joi.string().required(),
     Commune: Joi.string().required(),
     Company_size: Joi.number().required(),
 }
-
+const InsertEnterpriseSubSector = {
+    subSectorId: Joi.number().integer().required()
+}
 const InsertQuestionnaire = {
     QuestionsAlternativeId: Joi.number().integer().required(),
     EnterpriseId: Joi.number().integer().required(),
@@ -93,5 +94,6 @@ module.exports = {
     InsertPublicUser,
     InsertSector,
     InsertSubSector,
-    InsertQuestionsAlternative
+    InsertQuestionsAlternative,
+    InsertEnterpriseSubSector
 };

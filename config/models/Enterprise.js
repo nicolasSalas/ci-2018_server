@@ -1,6 +1,8 @@
 
 const sequelize = require('sequelize');
 const connection = require('../conection');
+const Sector = require('./Sector');
+
 
 const Enterprise = connection.define('Enterprise', {
     id: {
@@ -29,10 +31,6 @@ const Enterprise = connection.define('Enterprise', {
         type: sequelize.STRING,
         field: 'Address'
     },
-    Activity_sector: {
-        type: sequelize.STRING,
-        field: 'Activity_sector'
-    },
     City: {
         type: sequelize.STRING,
         field: 'City'
@@ -50,5 +48,5 @@ const Enterprise = connection.define('Enterprise', {
         freezeTableName: true,
         operatorsAliases: false
     });
-
+Enterprise.belongsTo(Sector)
 module.exports = Enterprise;

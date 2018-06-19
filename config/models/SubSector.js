@@ -2,7 +2,6 @@
 const sequelize = require('sequelize');
 const connection = require('../conection');
 const Sector = require('./Sector');
-const Enterprise = require('./Enterprise');
 
 const SubSector = connection.define('SubSector', {
     id: {
@@ -11,9 +10,9 @@ const SubSector = connection.define('SubSector', {
         autoIncrement: true,
         primaryKey: true
     },
-    SubSectorTipe: {
+    SubSectorName: {
         type: sequelize.STRING,
-        field: 'SectorTipe'
+        field: 'SubSectorName'
     }
 },
     {
@@ -23,7 +22,5 @@ const SubSector = connection.define('SubSector', {
 
 
 SubSector.belongsTo(Sector);
-SubSector.belongsTo(Enterprise);
-
 
 module.exports = SubSector;
