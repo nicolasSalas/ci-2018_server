@@ -24,6 +24,111 @@ module.exports = {
                 });
             });
     },
+    InsertVariables: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
+    InsertVariablesSelected: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
+    InsertSurveyed: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
+    InsertSize: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
+    InsertRelationship: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
     InsertQuestions: (propiety, data, res) => {
         propiety
             .sync()

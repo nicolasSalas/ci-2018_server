@@ -1,23 +1,23 @@
 
 const sequelize = require('sequelize');
 const connection = require('../conection');
+const Enterprise = require('./Enterprise_stored');
 
-
-const Questions = connection.define('Questions', {
+const Enterprise_selected = connection.define('Enterprise_selected', {
     id: {
         type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
-    question: {
+    Mail: {
         type: sequelize.STRING,
-        field: 'question'
+        field: 'Quantity'
     }
 },
     {
         freezeTableName: true,
         operatorsAliases: false
     });
-
-module.exports = Questions;
+Enterprise_selected.belongsTo(Enterprise);
+module.exports = Enterprise_selected;

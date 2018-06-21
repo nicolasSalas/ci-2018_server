@@ -4,6 +4,23 @@ const InsertPrivateUser = {
     PersonId: Joi.number().integer().required(),
     QuestionnaireId: Joi.number().integer().required()
 }
+const InsertVariables = {
+    Name: Joi.string().required(),
+    FactorId: Joi.number().integer().required()
+}
+const InsertVariablesSelected = {
+    Name: Joi.string().required(),
+    FactorId: Joi.number().integer().required()
+}
+const InsertSurveyed = {
+    Type: Joi.string().required(),
+}
+const InsertSize = {
+    Quantity: Joi.number().integer().required()
+}
+const InsertRelationship = {
+    Quantity: Joi.number().integer().required()
+}
 
 const Delete = {
     id: Joi.number().integer().required()
@@ -34,7 +51,7 @@ const InsertQuestions = {
 
 }
 const InsertSector = {
-    SectorName: Joi.string().required(),
+    Name: Joi.string().required(),
 }
 const InsertSubSector = {
     SubSectorName: Joi.string().required(),
@@ -95,5 +112,10 @@ module.exports = {
     InsertSector,
     InsertSubSector,
     InsertQuestionsAlternative,
-    InsertEnterpriseSubSector
+    InsertEnterpriseSubSector,
+    InsertVariables,
+    InsertVariablesSelected,
+    InsertSurveyed,
+    InsertSize,
+    InsertRelationship
 };

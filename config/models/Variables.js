@@ -1,23 +1,26 @@
 
 const sequelize = require('sequelize');
 const connection = require('../conection');
+const Factor = require('./Factor');
 
-
-const Questions = connection.define('Questions', {
+const Variables = connection.define('Variables', {
     id: {
         type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
-    question: {
+    Name: {
         type: sequelize.STRING,
-        field: 'question'
-    }
+        field: 'Name'
+    }, Definition: {
+        type: sequelize.STRING,
+        field: 'Name'
+    },
 },
     {
         freezeTableName: true,
         operatorsAliases: false
     });
-
-module.exports = Questions;
+Variables.belongsTo(Factor)
+module.exports = Variables;

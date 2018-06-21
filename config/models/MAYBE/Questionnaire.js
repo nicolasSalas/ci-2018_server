@@ -2,7 +2,7 @@
 const sequelize = require('sequelize');
 const connection = require('../conection');
 const QuestionAlternative = require('./QuestionsAlternative');
-const Enterprise = require('./Enterprise');
+const Enterprise = require('./Enterprise_evaluation');
 
 const Questionnaire = connection.define('Questionnaire', {
     id: {

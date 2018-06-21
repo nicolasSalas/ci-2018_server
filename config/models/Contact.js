@@ -1,34 +1,35 @@
 
 const sequelize = require('sequelize');
 const connection = require('../conection');
-const Enterprise = require('./Enterprise_evaluation');
+//const Sector = require('./Sector');
 
-const Link = connection.define('Link', {
+
+const Contact = connection.define('Contact', {
     id: {
         type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
-    token: {
+    Position: {
         type: sequelize.STRING,
-        field: 'token'
+        field: 'Position'
     },
-    rand: {
+    Name: {
         type: sequelize.STRING,
-        field: 'rand'
+        field: 'Name'
     },
-    url: {
+    Mail: {
         type: sequelize.STRING,
-        field: 'url'
+        field: 'Mail'
     },
-
-},
-    {
+    Telephone: {
+        type: sequelize.INTEGER,
+        field: 'Telephone'
+    }
+}, {
         freezeTableName: true,
         operatorsAliases: false
     });
 
-
-Link.belongsTo(Enterprise);
-module.exports = Link;
+module.exports = Contact;

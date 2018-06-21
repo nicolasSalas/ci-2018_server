@@ -2,9 +2,10 @@
 const sequelize = require('sequelize');
 const connection = require('../conection');
 const Sector = require('./Sector');
+const Size = require('./Size');
 
 
-const Enterprise = connection.define('Enterprise', {
+const Enterprise_evaluation = connection.define('Enterprise_evaluation', {
     id: {
         type: sequelize.INTEGER,
         field: 'id',
@@ -48,5 +49,6 @@ const Enterprise = connection.define('Enterprise', {
         freezeTableName: true,
         operatorsAliases: false
     });
-Enterprise.belongsTo(Sector)
-module.exports = Enterprise;
+Enterprise_evaluation.belongsTo(Sector)
+Enterprise_evaluation.belongsTo(Size)
+module.exports = Enterprise_evaluation;

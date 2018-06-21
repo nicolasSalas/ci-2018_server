@@ -3,16 +3,16 @@ const sequelize = require('sequelize');
 const connection = require('../conection');
 
 
-const Questions = connection.define('Questions', {
+const Size = connection.define('Size', {
     id: {
         type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
-    question: {
-        type: sequelize.STRING,
-        field: 'question'
+    Quantity: {
+        type: sequelize.INTEGER,
+        field: 'Quantity'
     }
 },
     {
@@ -20,4 +20,4 @@ const Questions = connection.define('Questions', {
         operatorsAliases: false
     });
 
-module.exports = Questions;
+module.exports = Size;

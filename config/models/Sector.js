@@ -10,7 +10,7 @@ const Sector = connection.define('Sector', {
         autoIncrement: true,
         primaryKey: true
     },
-    SectorName: {
+    Name: {
         type: sequelize.STRING,
         field: 'SectorName'
     },

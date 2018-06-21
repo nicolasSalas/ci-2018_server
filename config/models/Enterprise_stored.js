@@ -1,34 +1,33 @@
 
 const sequelize = require('sequelize');
 const connection = require('../conection');
-const Enterprise = require('./Enterprise_evaluation');
+const SubSector = require('./SubSector');
+const Contact = require('./Contact');
 
-const Link = connection.define('Link', {
+
+const Enterprise_stored = connection.define('Enterprise_stored', {
     id: {
         type: sequelize.INTEGER,
         field: 'id',
         autoIncrement: true,
         primaryKey: true
     },
-    token: {
+    Name: {
         type: sequelize.STRING,
-        field: 'token'
+        field: 'Name'
     },
-    rand: {
+    Alias: {
         type: sequelize.STRING,
-        field: 'rand'
+        field: 'Alias'
     },
-    url: {
+    Web: {
         type: sequelize.STRING,
-        field: 'url'
-    },
-
-},
-    {
+        field: 'Web'
+    }
+}, {
         freezeTableName: true,
         operatorsAliases: false
     });
-
-
-Link.belongsTo(Enterprise);
-module.exports = Link;
+Enterprise_stored.belongsTo(SubSector)
+Enterprise_stored.belongsTo(Contact)
+module.exports = Enterprise_stored;

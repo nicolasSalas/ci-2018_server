@@ -2,7 +2,7 @@
 const sequelize = require('sequelize');
 const connection = require('../conection');
 const Questions = require('./Questions');
-const Answers = require('./Answers');
+const Answers = require('./Answers_to_question');
 
 
 const QuestionsAlternative = connection.define('QuestionsAlternative', {

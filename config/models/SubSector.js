@@ -10,9 +10,9 @@ const SubSector = connection.define('SubSector', {
         autoIncrement: true,
         primaryKey: true
     },
-    SubSectorName: {
+    Name: {
         type: sequelize.STRING,
-        field: 'SubSectorName'
+        field: 'Name'
     }
 },
     {
