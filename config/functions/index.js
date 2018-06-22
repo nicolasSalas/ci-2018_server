@@ -129,6 +129,111 @@ module.exports = {
                 });
             });
     },
+    InsertMailSurveyed: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
+    InsertFactor: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
+    InsertEnterpriseStored: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
+    InsertEnterpriseSelected: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
+    InsertContact: (propiety, data, res) => {
+        propiety
+            .sync()
+            .then(
+                () => propiety.create(data)
+            )
+            .then(result => {
+                res.status(200);
+                res.json({
+                    success: true,
+                    token: services.createToken(data)
+                })
+            })
+            .catch((error) => {
+                res.status(500);
+                res.json({
+                    error: error,
+                    stackError: error.stack
+                });
+            });
+    },
     InsertQuestions: (propiety, data, res) => {
         propiety
             .sync()
@@ -193,7 +298,7 @@ module.exports = {
                 });
             });
     },
-    InsertAnswers: (propiety, data, res) => {
+    InsertAnswersToQuestion: (propiety, data, res) => {
         propiety
             .sync()
             .then(

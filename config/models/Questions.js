@@ -10,9 +10,9 @@ const Questions = connection.define('Questions', {
         autoIncrement: true,
         primaryKey: true
     },
-    question: {
+    Question: {
         type: sequelize.STRING,
-        field: 'question'
+        field: 'Question'
     }
 },
     {

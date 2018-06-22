@@ -39,11 +39,6 @@ const Enterprise_evaluation = connection.define('Enterprise_evaluation', {
     Commune: {
         type: sequelize.STRING,
         field: 'Commune'
-    },
-
-    Company_size: {
-        type: sequelize.INTEGER,
-        field: 'Company_size'
     }
 }, {
         freezeTableName: true,

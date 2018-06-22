@@ -20,19 +20,9 @@ app.get('/', function (request, resp, next) {
   resp.render('index')
 });
 
-//var _Login = require('./Server/_Login.js');
-var _InsertPrivateUser = require('./Server/_InsertPrivateUser');
-var _Delete = require('./Server/_Delete');
-var _Update = require('./Server/_Update');
-var _Read = require('./Server/_ReadLink.js');
+var _ReadLink = require('./Server/_ReadLink.js');
 var _InsertQuestions = require('./Server/_InsertQuestions');
-var _InsertAnswers = require('./Server/_InsertAnswers');
-var _InsertEnterprise = require('./Server/_InsertEnterprise');
-var _InsertPerson = require('./Server/_InsertPerson');
-var _InsertQuestionnaire = require('./Server/_InsertQuestionnaire');
 var _InsertLink = require('./Server/_InsertLink');
-var _InsertPublicUser = require('./Server/_InsertPublicUser');
-var _InsertQuestionsAlternative = require('./Server/_InsertQuestionsAlternative');
 var _InsertSector = require('./Server/_InsertSector');
 var _InsertSubSector = require('./Server/_InsertSubSector');
 var _InsertVariables = require('./Server/_InsertVariables');
@@ -40,9 +30,16 @@ var _InsertVariablesSelected = require('./Server/_InsertVariablesSelected');
 var _InsertSurveyed = require('./Server/_InsertSurveyed');
 var _InsertSize = require('./Server/_InsertSize');
 var _InsertRelationship = require('./Server/_InsertRelationship');
+var _InsertMailSurveyed = require('./Server/_InsertMailSurveyed');
+var _InsertEnterpriseStored = require('./Server/_InsertEnterpriseStored');
+var _InsertEnterpriseSelected = require('./Server/_InsertEnterpriseSelected');
+var _InsertEnterpriseEvaluation = require('./Server/_InsertEnterpriseEvaluation');
+var _InsertContact = require('./Server/_InsertContact');
+var _InsertAnswerToQuestion = require('./Server/_InsertAnswerToQuestion');
+var _InsertFactor = require('./Server/_InsertFactor');
 
-app.use('/webservices', _InsertVariables, _InsertVariablesSelected, _InsertSurveyed, _InsertSector, _InsertSubSector, _InsertSize, _InsertRelationship);
-/* app.use('/webservices', _InsertPrivateUser, _Update, _Delete, _Read, _InsertQuestions, _InsertAnswers, _InsertEnterprise, _InsertPerson, _InsertQuestionnaire, _InsertLink, _InsertPublicUser, _InsertQuestionsAlternative, _InsertSector, _InsertSubSector); */
+app.use('/webservices', _InsertVariables, _InsertVariablesSelected, _InsertSurveyed, _InsertSector, _InsertSubSector, _InsertSize, _InsertRelationship, _InsertQuestions, _InsertMailSurveyed, _InsertLink, _InsertEnterpriseStored, _InsertEnterpriseSelected, _InsertContact, _InsertAnswerToQuestion, _InsertFactor, _ReadLink, _InsertEnterpriseEvaluation);
+
 
 app.listen(8081, function () {
   console.log('El servidor Esta En llamas!');
