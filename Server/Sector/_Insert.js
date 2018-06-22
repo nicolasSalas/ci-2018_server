@@ -1,12 +1,12 @@
 const express = require('express');
-const sequelize = require('sequelize');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const Joi = require('joi');
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
-const Sector = require('../config/models/Sector');
-const CRUD = require('../config/functions');
-const { InsertSector } = require('../config/functions/validator');
+const urlencodedParser = bodyParser.urlencoded({extended: false})
+
+const Sector = require('../../config/models/Sector'); //MODEL
+const CRUD = require('../../config/functions/API'); // API
+const {InsertSector} = require('../../config/functions/validator/Insert'); // VALIDATOR
 
 router.post('/InsertSector', urlencodedParser, (req, res) => {
 
@@ -17,16 +17,14 @@ router.post('/InsertSector', urlencodedParser, (req, res) => {
 
     let data = req.body;
 
-    const { error, value } = Joi.validate(data, InsertSector
-    );
+    const {error} = Joi.validate(data, InsertSector);
 
     if (error) {
         res
             .status(401)
-            .json({ success: false, error: error.details });
+            .json({success: false, error: error.details});
     } else {
-        CRUD.InsertSector(Sector
-            , data, res);
+        CRUD.Insert(Sector, data, res);
     }
 });
 

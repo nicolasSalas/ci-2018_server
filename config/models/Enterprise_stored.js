@@ -4,11 +4,10 @@ const connection = require('../conection');
 const SubSector = require('./SubSector');
 const Contact = require('./Contact');
 
-
 const Enterprise_stored = connection.define('Enterprise_stored', {
-    id: {
+    ID: {
         type: sequelize.INTEGER,
-        field: 'id',
+        field: 'ID',
         autoIncrement: true,
         primaryKey: true
     },
@@ -28,6 +27,7 @@ const Enterprise_stored = connection.define('Enterprise_stored', {
         freezeTableName: true,
         operatorsAliases: false
     });
-Enterprise_stored.belongsTo(SubSector)
-Enterprise_stored.belongsTo(Contact)
+Enterprise_stored.belongsTo(SubSector, { foreignKey: 'Subsector_ID', targetKey: 'ID' })
+Enterprise_stored.belongsTo(Contact, { foreignKey: 'Contact_ID', targetKey: 'ID' })
+
 module.exports = Enterprise_stored;

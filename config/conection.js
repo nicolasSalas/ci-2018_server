@@ -1,7 +1,7 @@
 
 const sequelize = require('sequelize');
 //Nombre BD , username, password
-const connection = new sequelize('fortesting', 'dev', 'index_0011',
+const connection = new sequelize('Icorp', 'dev', 'index_0011',
     {
         host: 'testing.cob64ast3qap.us-west-2.rds.amazonaws.com',
         dialect: 'mysql',

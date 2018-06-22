@@ -4,11 +4,10 @@ const connection = require('../conection');
 const Sector = require('./Sector');
 const Size = require('./Size');
 
-
-const Variables_selected = connection.define('Variables_selected', {
-    id: {
+const Variables_Selected = connection.define('Variables_Selected', {
+    ID: {
         type: sequelize.INTEGER,
-        field: 'id',
+        field: 'ID',
         autoIncrement: true,
         primaryKey: true
     },
@@ -153,4 +152,4 @@ const Variables_selected = connection.define('Variables_selected', {
         operatorsAliases: false
     });
 
-module.exports = Variables_selected;
+module.exports = Variables_Selected;

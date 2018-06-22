@@ -3,16 +3,16 @@ const sequelize = require('sequelize');
 const connection = require('../conection');
 const Questions = require('./Questions');
 
-const Answers = connection.define('Answers', {
-    id: {
+const Answer_To_Question = connection.define('Answer_To_Question', {
+    ID: {
         type: sequelize.INTEGER,
-        field: 'id',
+        field: 'ID',
         autoIncrement: true,
         primaryKey: true
     },
-    answer: {
+    Answer: {
         type: sequelize.STRING,
-        field: 'answer'
+        field: 'Answer'
 
     },
 },
@@ -20,5 +20,5 @@ const Answers = connection.define('Answers', {
         freezeTableName: true,
         operatorsAliases: false
     });
-Answers.belongsTo(Questions, { foreignKey: 'QuestionsId', targetKey: 'id' });
+Answer_To_Question.belongsTo(Questions, { foreignKey: 'Question_ID', targetKey: 'ID' });
 module.exports = Answers;

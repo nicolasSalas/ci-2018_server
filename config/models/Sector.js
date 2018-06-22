@@ -4,15 +4,15 @@ const connection = require('../conection');
 //const Enterprise = require('./Enterprise');
 
 const Sector = connection.define('Sector', {
-    id: {
+    ID: {
         type: sequelize.INTEGER,
-        field: 'id',
+        field: 'ID',
         autoIncrement: true,
         primaryKey: true
     },
     Name: {
         type: sequelize.STRING,
-        field: 'SectorName'
+        field: 'Name'
     },
 }, {
         freezeTableName: true,

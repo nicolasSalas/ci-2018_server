@@ -1,14 +1,13 @@
 const express = require('express');
-const sequelize = require('sequelize');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const Joi = require('joi');
 const urlencodedParser = bodyParser.urlencoded({ extended: false })
-const Questions = require('../config/models/Questions');
-const CRUD = require('../config/functions');
-const { InsertQuestions } = require('../config/functions/validator');
+const Enterprise_evaluation = require('../../config/models/Enterprise_evaluation');  //MODEL
+const CRUD = require('../../config/functions/API'); //API
+const { InsertEnterprise_evaluation } = require('../../config/functions/validator/Insert'); //VALIDATOR
 
-router.post('/InsertQuestions', urlencodedParser, (req, res) => {
+router.post('/InsertEnterprise_evaluation', urlencodedParser, (req, res) => {
 
     if (!req.body || req.body.length === 0) {
         console.log('request body not found');
@@ -17,14 +16,15 @@ router.post('/InsertQuestions', urlencodedParser, (req, res) => {
 
     let data = req.body;
 
-    const { error, value } = Joi.validate(data, InsertQuestions);
+    const { error } = Joi.validate(data, InsertEnterprise_evaluation);
 
     if (error) {
         res
             .status(401)
             .json({ success: false, error: error.details });
     } else {
-        CRUD.InsertQuestions(Questions, data, res);
+        CRUD.Insert(Enterprise_evaluation, data, res);
+
     }
 });
 

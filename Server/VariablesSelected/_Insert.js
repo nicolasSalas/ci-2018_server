@@ -3,10 +3,13 @@ const sequelize = require('sequelize');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const Joi = require('joi');
-const urlencodedParser = bodyParser.urlencoded({ extended: false })
-const Variables_selected = require('../config/models/Variables_selected');
-const CRUD = require('../config/functions');
-const { InsertVariablesSelected } = require('../config/functions/validator');
+const urlencodedParser = bodyParser.urlencoded({extended: false})
+
+const Variables_selected = require('../../config/models/Variables_selected'); //MODEL
+const CRUD = require('../../config/functions/API'); // API
+const {InsertVariablesSelected} = require(
+    '../../config/functions/validator/Insert'
+); // VALIDATOR
 
 router.post('/InsertVariablesSelected', urlencodedParser, (req, res) => {
 
@@ -17,16 +20,14 @@ router.post('/InsertVariablesSelected', urlencodedParser, (req, res) => {
 
     let data = req.body;
 
-    const { error, value } = Joi.validate(data, InsertVariablesSelected
-    );
+    const {error} = Joi.validate(data, InsertVariablesSelected);
 
     if (error) {
         res
             .status(401)
-            .json({ success: false, error: error.details });
+            .json({success: false, error: error.details});
     } else {
-        CRUD.InsertVariablesSelected(Variables_selected
-            , data, res);
+        CRUD.Insert(Variables_selected, data, res);
     }
 });
 

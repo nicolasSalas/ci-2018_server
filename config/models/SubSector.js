@@ -3,10 +3,10 @@ const sequelize = require('sequelize');
 const connection = require('../conection');
 const Sector = require('./Sector');
 
-const SubSector = connection.define('SubSector', {
-    id: {
+const Subsector = connection.define('Subsector', {
+    ID: {
         type: sequelize.INTEGER,
-        field: 'id',
+        field: 'ID',
         autoIncrement: true,
         primaryKey: true
     },
@@ -20,7 +20,6 @@ const SubSector = connection.define('SubSector', {
         operatorsAliases: false
     });
 
+Subsector.belongsTo(Sector, { foreignKey: 'Sector_ID', targetKey: 'ID' });
 
-SubSector.belongsTo(Sector);
-
-module.exports = SubSector;
+module.exports = Subsector;

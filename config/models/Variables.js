@@ -4,23 +4,24 @@ const connection = require('../conection');
 const Factor = require('./Factor');
 
 const Variables = connection.define('Variables', {
-    id: {
+    ID: {
         type: sequelize.INTEGER,
-        field: 'id',
+        field: 'ID',
         autoIncrement: true,
         primaryKey: true
     },
     Name: {
         type: sequelize.STRING,
         field: 'Name'
-    }, Definition: {
+    }, 
+    Definition: {
         type: sequelize.STRING,
-        field: 'Name'
+        field: 'Definition'
     },
 },
     {
         freezeTableName: true,
         operatorsAliases: false
     });
-Variables.belongsTo(Factor)
+Variables.belongsTo(Factor, { foreignKey: 'Factor_ID', targetKey: 'ID' })
 module.exports = Variables;
