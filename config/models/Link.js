@@ -4,23 +4,23 @@ const connection = require('../conection');
 const Enterprise = require('./Enterprise_evaluation');
 
 const Link = connection.define('Link', {
-    id: {
+    ID: {
         type: sequelize.INTEGER,
-        field: 'id',
+        field: 'ID',
         autoIncrement: true,
         primaryKey: true
     },
-    token: {
+    Token: {
         type: sequelize.STRING,
-        field: 'token'
+        field: 'Token'
     },
-    rand: {
+    Rand: {
         type: sequelize.STRING,
-        field: 'rand'
+        field: 'Rand'
     },
-    url: {
+    Url: {
         type: sequelize.STRING,
-        field: 'url'
+        field: 'Url'
     },
 
 },
@@ -29,6 +29,5 @@ const Link = connection.define('Link', {
         operatorsAliases: false
     });
 
-
-Link.belongsTo(Enterprise);
+Link.belongsTo(Enterprise, { foreignKey: 'Enterprise_Evaluation_ID', targetKey: 'ID' });
 module.exports = Link;

@@ -3,9 +3,9 @@ const sequelize = require('sequelize');
 const connection = require('../conection');
 
 const Factor = connection.define('Factor', {
-    id: {
+    ID: {
         type: sequelize.INTEGER,
-        field: 'id',
+        field: 'ID',
         autoIncrement: true,
         primaryKey: true
     },

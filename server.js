@@ -20,7 +20,11 @@ app.get('/', function (request, resp, next) {
   resp.render('index')
 });
 
+<<<<<<< HEAD
 var _ReadLink = require('./Server/_ReadLink.js');
+=======
+//var _Login = require('./Server/_Login.js');
+>>>>>>> e818ae45d8b59d127431979502a17285000d0e64
 var _InsertQuestions = require('./Server/_InsertQuestions');
 var _InsertLink = require('./Server/_InsertLink');
 var _InsertSector = require('./Server/_InsertSector');

@@ -2,11 +2,10 @@
 const sequelize = require('sequelize');
 const connection = require('../conection');
 
-
 const Questions = connection.define('Questions', {
-    id: {
+    ID: {
         type: sequelize.INTEGER,
-        field: 'id',
+        field: 'ID',
         autoIncrement: true,
         primaryKey: true
     },
