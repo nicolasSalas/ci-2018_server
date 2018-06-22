@@ -11,56 +11,63 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept"
+    );
+    next();
 });
 
 app.get('/', function (request, resp, next) {
-  resp.render('index')
+    resp.render('index')
 });
 
-//var _Login = require('./Server/_Login.js');
-var _InsertQuestions = require('./Server/_InsertQuestions');
-var _InsertAnswers = require('./Server/_InsertAnswers');
-var _InsertEnterprise = require('./Server/_InsertEnterprise');
-var _InsertPerson = require('./Server/_InsertPerson');
-var _InsertQuestionnaire = require('./Server/_InsertQuestionnaire');
-var _InsertLink = require('./Server/_InsertLink');
-var _InsertPublicUser = require('./Server/_InsertPublicUser');
-var _InsertQuestionsAlternative = require('./Server/_InsertQuestionsAlternative');
-var _InsertSector = require('./Server/_InsertSector');
-var _InsertSubSector = require('./Server/_InsertSubSector');
-var _InsertVariables = require('./Server/_InsertVariables');
-var _InsertVariablesSelected = require('./Server/_InsertVariablesSelected');
-var _InsertSurveyed = require('./Server/_InsertSurveyed');
-var _InsertSize = require('./Server/_InsertSize');
-var _InsertRelationship = require('./Server/_InsertRelationship');
+var Insert_AnswerToQuestion = require('./Server/AnswerToQuestion/_Insert');
+var Insert_Contact = require('./Server/Contact/_Insert');
+var Insert_EnterpriseEvaluation = require('./Server/EnterpriseEvaluation/_Insert');
+var Insert_EnterpriseSelected = require('./Server/EnterpriseSelected/_Insert');
+var Insert_EnterpriseStored = require('./Server/EnterpriseStored/_Insert');
+var Insert_Factor = require('./Server/Factor/_Insert');
+var Insert_Link = require('./Server/Link/_Insert');
+var Insert_MailsSurveyed = require('./Server/MailsSurveyed/_Insert');
+var Insert_Question = require('./Server/Question/_Insert');
+var Insert_RelationShip = require('./Server/RelationShip/_Insert');
+var Insert_Sector = require('./Server/Sector/_Insert');
+var Insert_Size = require('./Server/Size/_Insert');
+var Insert_Subsector = require('./Server/Subsector/_Insert');
+var Insert_Surveyed = require('./Server/Surveyed/_Insert');
+var Insert_Variables = require('./Server/Variables/_Insert');
+var Insert_VariablesSelected = require('./Server/VariablesSelected/_Insert');
 
-app.use('/webservices', _InsertVariables, _InsertVariablesSelected, _InsertSurveyed, _InsertSector, _InsertSubSector, _InsertSize, _InsertRelationship);
-/* app.use('/webservices', _InsertPrivateUser, _Update, _Delete, _Read, _InsertQuestions, _InsertAnswers, _InsertEnterprise, _InsertPerson, _InsertQuestionnaire, _InsertLink, _InsertPublicUser, _InsertQuestionsAlternative, _InsertSector, _InsertSubSector); */
+app.use(
+    '/webservices',
+    Insert_AnswerToQuestion,
+    Insert_Contact,
+    Insert_EnterpriseEvaluation,
+    Insert_EnterpriseSelected,
+    Insert_EnterpriseStored,
+    Insert_Factor,
+    Insert_Link,
+    Insert_MailsSurveyed,
+    Insert_Question,
+    Insert_RelationShip,
+    Insert_Sector,
+    Insert_Size,
+    Insert_Subsector,
+    Insert_Surveyed,
+    Insert_Variables,
+    Insert_VariablesSelected
+
+);
 
 app.listen(8081, function () {
-  console.log('El servidor Esta En llamas!');
+    console.log('El servidor Esta En llamas!');
 });
 
-// var connection = mysql.createConnection({
-
-//   host: process.env.RDS_HOSTNAME,
-//   user: process.env.RDS_USERNAME,
-//   password: process.env.RDS_PASSWORD,
-//   database: process.env.RDS_DATABASE,
-//   port: process.env.RDS_PORT
-
-// });
-
-// connection.connect(function (err) {
-//   if (err) {
-//     console.error('Database connection failed: ' + err.stack);
-//     return;
-//   }
-
-//   console.log('Connected to database.');
-// });
-
-// connection.end();
+// var connection = mysql.createConnection({   host: process.env.RDS_HOSTNAME,
+// user: process.env.RDS_USERNAME,   password: process.env.RDS_PASSWORD,
+// database: process.env.RDS_DATABASE,   port: process.env.RDS_PORT });
+// connection.connect(function (err) {   if (err) {     console.error('Database
+// connection failed: ' + err.stack);     return;   }   console.log('Connected
+// to database.'); }); connection.end();
