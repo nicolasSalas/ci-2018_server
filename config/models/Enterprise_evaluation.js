@@ -38,11 +38,7 @@ const Enterprise_evaluation = connection.define('Enterprise_evaluation', {
     Commune: {
         type: sequelize.STRING,
         field: 'Commune'
-<<<<<<< HEAD
-    }
-=======
     },
->>>>>>> e818ae45d8b59d127431979502a17285000d0e64
 }, {
         freezeTableName: true,
         operatorsAliases: false
