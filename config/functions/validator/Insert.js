@@ -20,6 +20,8 @@ const InsertEnterprise_evaluation = {
     Address: Joi.string().required(),
     City: Joi.string().required(),
     Commune: Joi.string().required(),
+    Size_ID: Joi.number().integer().required(),
+    Sector_ID: Joi.number().integer().required(),
 
 }
 const InsertEnterprise_selected = {
@@ -40,7 +42,7 @@ const InsertFactor = {
     Surveyed_ID: Joi.number().integer().required()
 }
 const InsertLink = {
-    EnterpriseId: Joi.number().integer().required(),
+    Enterprise_Evaluation_ID: Joi.number().integer().required(),
     token: Joi.string().required(),
     rand: Joi.string().required(),
     url: Joi.string().required(),
@@ -58,7 +60,7 @@ const InsertSurveyed = {
     Type: Joi.string().required(),
 }
 const InsertMail_surveyed = {
-    Name: Joi.string().required()
+    Mail: Joi.string().required()
 }
 
 const InsertSize = {
