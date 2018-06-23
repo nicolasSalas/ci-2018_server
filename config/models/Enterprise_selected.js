@@ -3,7 +3,7 @@ const sequelize = require('sequelize');
 const connection = require('../conection');
 const Enterprise_stored = require('./Enterprise_stored');
 
-const Enterprise_Selected = connection.define('Enterprise_Selected', {
+const Enterprise_selected = connection.define('Enterprise_selected', {
     ID: {
         type: sequelize.INTEGER,
         field: 'ID',
@@ -19,7 +19,7 @@ const Enterprise_Selected = connection.define('Enterprise_Selected', {
         freezeTableName: true,
         operatorsAliases: false
     });
-    
-Enterprise_Selected.belongsTo(Enterprise_stored, { foreignKey: 'Enterprise_Stored_ID', targetKey: 'ID' });
 
-module.exports = Enterprise_Selected;
+Enterprise_selected.belongsTo(Enterprise_stored, { foreignKey: 'Enterprise_Stored_ID', targetKey: 'ID' });
+
+module.exports = Enterprise_selected;

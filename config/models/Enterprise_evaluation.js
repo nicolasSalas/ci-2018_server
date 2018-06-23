@@ -43,7 +43,8 @@ const Enterprise_evaluation = connection.define('Enterprise_evaluation', {
         freezeTableName: true,
         operatorsAliases: false
     });
-Enterprise_evaluation.belongsTo(Size, { foreignKey: 'Size_ID', targetKey: 'ID' });
-Enterprise_evaluation.belongsTo(Sector, { foreignKey: 'Sector_ID', targetKey: 'ID' });
+
+Enterprise_evaluation.belongsTo(Size, { as: 'Size_ID_as', foreignKey: 'Size_ID' });
+Enterprise_evaluation.belongsTo(Sector, { as: 'Sector_ID_as', foreignKey: 'Sector_ID' });
 
 module.exports = Enterprise_evaluation;

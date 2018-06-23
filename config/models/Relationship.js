@@ -19,9 +19,9 @@ const Relationship = connection.define('Relationship', {
         operatorsAliases: false
     });
 
-Relationship.belongsTo(Mail_surveyed, { foreignKey: 'Mail_Surveyed_ID', targetKey: 'ID' });
-Relationship.belongsTo(Enterprise_selected, { foreignKey: 'Enterprise_Selected_ID', targetKey: 'ID' });
-Relationship.belongsTo(Variables_selected, { foreignKey: 'Variables_Selected_ID', targetKey: 'ID' });
-Relationship.belongsTo(Answer_to_question, { foreignKey: 'Answer_To_Question_ID', targetKey: 'ID' });
+Relationship.belongsTo(Mail_surveyed, { as:'Mail_Surveyed_ID_as', foreignKey: 'Mail_Surveyed_ID'});
+Relationship.belongsTo(Enterprise_selected, { as:'Enterprise_Selected_ID_as', foreignKey: 'Enterprise_Selected_ID'});
+Relationship.belongsTo(Variables_selected, { as:'Variables_Selected_ID_as', foreignKey: 'Variables_Selected_ID'});
+Relationship.belongsTo(Answer_to_question, { as:'Answer_To_Question_ID_as', foreignKey: 'Answer_To_Question_ID'});
 
 module.exports = Relationship;

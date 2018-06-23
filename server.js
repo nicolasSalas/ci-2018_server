@@ -1,9 +1,6 @@
 var express = require('express');
 var path = require('path');
-var ejs = require('ejs');
 var app = express();
-var mysql = require('mysql');
-var http = require("http");
 
 app.use(express.static(path.join(__dirname, 'src')));
 

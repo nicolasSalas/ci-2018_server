@@ -1,5 +1,5 @@
 'use strict'
-const services = require('./token');
+const services = require('../token');
 
 module.exports = {
 

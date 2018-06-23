@@ -27,7 +27,7 @@ const Enterprise_stored = connection.define('Enterprise_stored', {
         freezeTableName: true,
         operatorsAliases: false
     });
-Enterprise_stored.belongsTo(SubSector, { foreignKey: 'Subsector_ID', targetKey: 'ID' })
-Enterprise_stored.belongsTo(Contact, { foreignKey: 'Contact_ID', targetKey: 'ID' })
+Enterprise_stored.belongsTo(SubSector, { as: 'Subsector_ID_as', foreignKey: 'Subsector_ID'  })
+Enterprise_stored.belongsTo(Contact, { as: 'Contact_ID_as', foreignKey: 'Contact_ID' })
 
 module.exports = Enterprise_stored;

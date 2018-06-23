@@ -1,7 +1,6 @@
 
 const sequelize = require('sequelize');
 const connection = require('../conection');
-//const Sector = require('./Sector');
 
 const Contact = connection.define('Contact', {
     ID: {

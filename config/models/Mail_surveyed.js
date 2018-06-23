@@ -20,6 +20,6 @@ const Mail_Surveyed = connection.define('Mail_Surveyed', {
         freezeTableName: true,
         operatorsAliases: false
     });
-Mail_Surveyed.belongsTo(Enterprise, { foreignKey: 'Enterprise_Evaluation_ID', targetKey: 'ID' });
-Mail_Surveyed.belongsTo(Surveyed, { foreignKey: 'Surveyed_ID', targetKey: 'ID' });
+Mail_Surveyed.belongsTo(Enterprise, { as:'Enterprise_Evaluation_ID_as', foreignKey: 'Enterprise_Evaluation_ID', targetKey: 'ID' });
+Mail_Surveyed.belongsTo(Surveyed, { as: 'Surveyed_ID_as', foreignKey: 'Surveyed_ID', targetKey: 'ID' });
 module.exports = Mail_Surveyed;
