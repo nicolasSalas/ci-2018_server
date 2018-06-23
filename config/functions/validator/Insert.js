@@ -14,14 +14,15 @@ const InsertContact = {
 const InsertEnterprise_evaluation = {
     Sector_ID: Joi.number().integer().required(),
     Size_ID: Joi.number().integer().required(),
-    Contact: Joi.string().required(),
+    Contact_Name: Joi.string().required(),
+    Enterprise_Name: Joi.string().required(),
     Position: Joi.string().required(),
     Mail: Joi.string().email().required(),
     Address: Joi.string().required(),
     City: Joi.string().required(),
     Commune: Joi.string().required(),
-
 }
+
 const InsertEnterprise_selected = {
     Mail: Joi.string().email().required(),
 
@@ -40,10 +41,10 @@ const InsertFactor = {
     Surveyed_ID: Joi.number().integer().required()
 }
 const InsertLink = {
-    EnterpriseId: Joi.number().integer().required(),
-    token: Joi.string().required(),
-    rand: Joi.string().required(),
-    url: Joi.string().required(),
+    Enterprise_Evaluation_ID: Joi.number().integer().required(),
+    Token: Joi.string().required(),
+    Rand: Joi.string().required(),
+    Url: Joi.string().required(),
 }
 
 const InsertVariables = {
