@@ -18,7 +18,7 @@ const Contact = connection.define('Contact', {
         field: 'Name'
     },
     Telephone: {
-        type: sequelize.INTEGER,
+        type: sequelize.STRING,
         field: 'Telephone'
     },
     Mail: {
