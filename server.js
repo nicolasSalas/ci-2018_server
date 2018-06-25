@@ -37,6 +37,10 @@ var Insert_Surveyed = require('./Server/Surveyed/_Insert');
 var Insert_Variables = require('./Server/Variables/_Insert');
 var Insert_VariablesSelected = require('./Server/VariablesSelected/_Insert');
 
+//
+var Read_Sector = require('./Server/Sector/_Read');
+var Read_Link = require('./Server/Link/_Read');
+
 app.use(
     '/webservices',
     Insert_AnswerToQuestion,
@@ -54,7 +58,9 @@ app.use(
     Insert_Subsector,
     Insert_Surveyed,
     Insert_Variables,
-    Insert_VariablesSelected
+    Insert_VariablesSelected,
+    Read_Sector,
+    Read_Link
 
 );
 

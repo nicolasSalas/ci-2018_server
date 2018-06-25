@@ -9,7 +9,7 @@ module.exports = {
             .then(() => propiety.create(data))
             .then(result => {
                 res.status(200);
-                res.json({success: true, token: services.createToken(data)})
+                res.json({success: true, token: services.createToken(data), id:result})
             })
             .catch((error) => {
                 res.status(500);
@@ -56,9 +56,7 @@ module.exports = {
         propiety
             .sync()
             .then(() => propiety.findAll({
-                where: {
-                    id: data.id
-                }
+                attributes: data
             }))
             .then(result => {
                 res.status(200);
@@ -68,5 +66,20 @@ module.exports = {
                 res.status(500);
                 res.json({error: error, stackError: error.stack});
             })
-        }
+        },
+    ReadWhere: (propiety, data, res) => {
+            propiety
+                .sync()
+                .then(() => propiety.find({
+                    where: data
+                }))
+                .then(result => {
+                    res.status(200);
+                    res.json({success: true, data: result})
+                })
+                .catch(error => {
+                    res.status(500);
+                    res.json({error: error, stackError: error.stack});
+                })
+            }
 }
