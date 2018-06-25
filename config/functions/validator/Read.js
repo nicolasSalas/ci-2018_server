@@ -3,8 +3,7 @@ const Joi = require('joi');
 //READ VALIDATOR SERVER
 
 const ReadLink = {
-    rand: Joi.string().required(),
-    token: Joi.string().required(),
+    Rand: Joi.string().required(),
 }
 
 module.exports = {
