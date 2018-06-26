@@ -9,7 +9,7 @@ module.exports = {
             .then(() => propiety.create(data))
             .then(result => {
                 res.status(200);
-                res.json({success: true, token: services.createToken(data), id:result})
+                res.json({success: true, token: services.createToken(data), id:result.ID})
             })
             .catch((error) => {
                 res.status(500);
