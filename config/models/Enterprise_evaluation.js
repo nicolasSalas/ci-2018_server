@@ -15,6 +15,10 @@ const Enterprise_evaluation = connection.define('Enterprise_evaluation', {
         type: sequelize.STRING,
         field: 'Contact_Name'
     },
+    Enterprise_Name: {
+        type: sequelize.STRING,
+        field: 'Enterprise_Name'
+    },
     Position: {
         type: sequelize.STRING,
         field: 'Position'
@@ -22,10 +26,6 @@ const Enterprise_evaluation = connection.define('Enterprise_evaluation', {
     Mail: {
         type: sequelize.STRING,
         field: 'Mail'
-    },
-    Enterprise_Name: {
-        type: sequelize.STRING,
-        field: 'Enterprise_Name'
     },
     Address: {
         type: sequelize.STRING,
