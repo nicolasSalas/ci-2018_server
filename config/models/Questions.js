@@ -2,7 +2,7 @@
 const sequelize = require('sequelize');
 const connection = require('../conection');
 
-const Questions = connection.define('Questions', {
+const Questions = connection.define('Question', {
     ID: {
         type: sequelize.INTEGER,
         field: 'ID',

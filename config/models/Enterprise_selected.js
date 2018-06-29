@@ -20,6 +20,6 @@ const Enterprise_selected = connection.define('Enterprise_selected', {
         operatorsAliases: false
     });
 
-Enterprise_selected.belongsTo(Enterprise_stored, { foreignKey: 'Enterprise_Stored_ID', targetKey: 'ID' });
+Enterprise_selected.belongsTo(Enterprise_stored, { as: 'Enterprise_Stored_ID_as', foreignKey: 'Enterprise_Stored_ID' });
 
 module.exports = Enterprise_selected;
