@@ -4,7 +4,7 @@ const connection = require('../conection');
 const Enterprise = require('./Enterprise_evaluation');
 const Surveyed = require('./Surveyed');
 
-const Mail_Surveyed = connection.define('Mail_Surveyed', {
+const Mail_Surveyed = connection.define('Mail_surveyed', {
     ID: {
         type: sequelize.INTEGER,
         field: 'ID',

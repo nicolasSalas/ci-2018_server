@@ -76,6 +76,7 @@ module.exports = {
                 .then(result => {
                     res.status(200);
                     res.json({success: true, data: result})
+                    console.log(result)
                 })
                 .catch(error => {
                     res.status(500);

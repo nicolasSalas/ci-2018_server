@@ -2,7 +2,7 @@ const Joi = require('joi');
 
 const InsertAnswers_to_question = {
     Answer: Joi.string().required(),
-    Question_ID: Joi.string().required(),
+    Question_ID: Joi.number().integer().required(),
 }
 const InsertContact = {
     Position: Joi.string().required(),
@@ -24,6 +24,7 @@ const InsertEnterprise_evaluation = {
 
 const InsertEnterprise_selected = {
     Name: Joi.string().required(),
+    Enterprise_Stored_ID: Joi.number().integer().required(),
 
 }
 const InsertEnterprise_stored = {
@@ -55,43 +56,52 @@ const InsertVariables = {
     Definition: Joi.string().required(),
 }
 const InsertVariablesSelected = {
-    Variable_1: Joi.string().required(),
-    Variable_2: Joi.string().required(),
-    Variable_3: Joi.string().required(),
-    Variable_4: Joi.string().required(),
-    Variable_5: Joi.string().required(),
-    Variable_6: Joi.string().required(),
-    Variable_7: Joi.string().required(),
-    Variable_8: Joi.string().required(),
-    Variable_9: Joi.string().required(),
-    Variable_10: Joi.string().required(),
-    Variable_11: Joi.string().required(),
-    Variable_12: Joi.string().required(),
-    Variable_13: Joi.string().required(),
-    Variable_14: Joi.string().required(),
-    Variable_15: Joi.string().required(),
-    Variable_16: Joi.string().required(),
-    Variable_17: Joi.string().required(),
-    Answer_1: Joi.string().required(),
-    Answer_2: Joi.string().required(),
-    Answer_3: Joi.string().required(),
-    Answer_4: Joi.string().required(),
-    Answer_5: Joi.string().required(),
-    Answer_6: Joi.string().required(),
-    Answer_7: Joi.string().required(),
-    Answer_8: Joi.string().required(),
-    Answer_9: Joi.string().required(),
-    Answer_10: Joi.string().required(),
-    Answer_11: Joi.string().required(),
-    Answer_12: Joi.string().required(),
-    Answer_13: Joi.string().required(),
-    Answer_14: Joi.string().required(),
-    Answer_15: Joi.string().required(),
-    Answer_16: Joi.string().required(),
-    Answer_17: Joi.string().required(),
+    Variable_1: Joi.number().integer().required(),
+    Variable_2: Joi.number().integer().required(),
+    Variable_3: Joi.number().integer().required(),
+    Variable_4: Joi.number().integer().required(),
+    Variable_5: Joi.number().integer().required(),
+    Variable_6: Joi.number().integer().required(),
+    Variable_7: Joi.number().integer().required(),
+    Variable_8: Joi.number().integer().required(),
+    Variable_9: Joi.number().integer().required(),
+    Variable_10: Joi.number().integer().required(),
+    Variable_11: Joi.number().integer().required(),
+    Variable_12: Joi.number().integer().required(),
+    Variable_13: Joi.number().integer().required(),
+    Variable_14: Joi.number().integer().required(),
+    Variable_15: Joi.number().integer().required(),
+    Variable_16: Joi.number().integer().required(),
+    Variable_17: Joi.number().integer().required(),
+    Answer_1: Joi.number().integer().required(),
+    Answer_2: Joi.number().integer().required(),
+    Answer_3: Joi.number().integer().required(),
+    Answer_4: Joi.number().integer().required(),
+    Answer_5: Joi.number().integer().required(),
+    Answer_6: Joi.number().integer().required(),
+    Answer_7: Joi.number().integer().required(),
+    Answer_8: Joi.number().integer().required(),
+    Answer_9: Joi.number().integer().required(),
+    Answer_10: Joi.number().integer().required(),
+    Answer_11: Joi.number().integer().required(),
+    Answer_12: Joi.number().integer().required(),
+    Answer_13: Joi.number().integer().required(),
+    Answer_14: Joi.number().integer().required(),
+    Answer_15: Joi.number().integer().required(),
+    Answer_16: Joi.number().integer().required(),
+    Answer_17: Joi.number().integer().required()
 }
-const InsertQuestions = {
-    Question: Joi.string().required()
+const InsertSurveyed = {
+    Type: Joi.string().required(),
+}
+const InsertMail_surveyed = {
+    Mail: Joi.string().required(),
+    Enterprise_Evaluation_ID: Joi.number().integer().required(),
+    Surveyed_ID: Joi.number().integer().required()
+}
+
+const InsertSize = {
+    Quantity: Joi.number().integer().required()
 }
 const InsertRelationship = {
     Mail_Surveyed_ID: Joi.number().integer().required(),

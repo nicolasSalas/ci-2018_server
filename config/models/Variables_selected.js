@@ -4,7 +4,7 @@ const connection = require('../conection');
 const Sector = require('./Sector');
 const Size = require('./Size');
 
-const Variables_Selected = connection.define('Variables_Selected', {
+const Variables_Selected = connection.define('Variables_selected', {
     ID: {
         type: sequelize.INTEGER,
         field: 'ID',
