@@ -2,7 +2,7 @@ const Joi = require('joi');
 
 const InsertAnswers_to_question = {
     Answer: Joi.string().required(),
-    Questions_ID: Joi.string().required(),
+    Question_ID: Joi.string().required(),
 }
 const InsertContact = {
     Position: Joi.string().required(),
