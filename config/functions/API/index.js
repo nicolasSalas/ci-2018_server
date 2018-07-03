@@ -70,7 +70,7 @@ module.exports = {
     ReadWhere: (propiety, data, res) => {
             propiety
                 .sync()
-                .then(() => propiety.find({
+                .then(() => propiety.findAll({
                     where: data
                 }))
                 .then(result => {
