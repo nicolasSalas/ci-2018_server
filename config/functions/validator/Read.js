@@ -17,10 +17,16 @@ const ReadSubSector_And_ID = {
 const ReadEnterprise_Stored = {
     Subsector_ID: Joi.number().integer().required(),
 }
+ReadMailSurveyed_And_ID = {
+    ID: Joi.number().integer().required(),
+    Enterprise_Evaluation_ID: Joi.number().integer().required(),
+    Surveyed_ID: Joi.number().integer().required()
+}
 
 module.exports = {
     ReadLink,
     ReadSectorID_From_Enterprise_Evaluation,
     ReadSubSector_And_ID,
-    ReadEnterprise_Stored
+    ReadEnterprise_Stored,
+    ReadMailSurveyed_And_ID
 };
