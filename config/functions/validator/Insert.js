@@ -105,6 +105,11 @@ const InsertSubSector = {
     Sector_ID: Joi.number().integer().required(),
 
 }
+const InsertMail_surveyed = {
+    Mail: Joi.string().email().required(),
+    Enterprise_Evaluation_ID: Joi.number().integer().required(),
+    Surveyed_ID: Joi.number().integer().required()
+}
 module.exports = {
     InsertLink,
     InsertSector,
