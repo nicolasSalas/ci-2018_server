@@ -5,7 +5,7 @@ const Joi = require('joi');
 const ReadLink = {
     Rand: Joi.string().required(),
 }
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
+
 const ReadSectorID_From_Enterprise_Evaluation = {
     ID: Joi.number().integer().required(),
 }
@@ -18,7 +18,7 @@ const ReadEnterprise_Stored = {
     Subsector_ID: Joi.number().integer().required(),
 }
 const ReadMailSurveyed_And_ID = {
-    Enterprise_Evaluation_ID: Joi.number().integer().required(),
+    Enterprise_Evaluation_ID: Joi.number().integer().required()
 }
 
 module.exports = {

@@ -74,11 +74,6 @@ module.exports = {
                 where: data
             }))
             .then(result => {
-
-
-
-
-
                 res.status(200);
                 res.json({ success: true, data: result })
                 console.log(result)
