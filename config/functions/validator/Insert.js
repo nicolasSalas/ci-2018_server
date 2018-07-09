@@ -45,11 +45,11 @@ const InsertLink = {
     Rand: Joi.string().required(),
     Url: Joi.string().required(),
 }
+
 const InsertMail_surveyed = {
     Mail: Joi.string().required(),
     Enterprise_Evaluation_ID: Joi.number().integer().required(),
     Surveyed_ID: Joi.number().integer().required()
-
 }
 const InsertVariables = {
     Name: Joi.string().required(),
@@ -94,11 +94,6 @@ const InsertVariablesSelected = {
 const InsertSurveyed = {
     Type: Joi.string().required(),
 }
-const InsertMail_surveyed = {
-    Mail: Joi.string().required(),
-    Enterprise_Evaluation_ID: Joi.number().integer().required(),
-    Surveyed_ID: Joi.number().integer().required()
-}
 
 const InsertSize = {
     Quantity: Joi.number().integer().required()
@@ -114,20 +109,13 @@ const InsertSector = {
     Name: Joi.string().required(),
 }
 
-const InsertSize = {
-    Quantity: Joi.number().integer().required()
-}
-
 const InsertSubSector = {
     Name: Joi.string().required(),
     Sector_ID: Joi.number().integer().required(),
 
 }
-const InsertSurveyed = {
-    Type: Joi.string().required(),
-}
+
 module.exports = {
-    InsertQuestions,
     InsertLink,
     InsertSector,
     InsertSubSector,
