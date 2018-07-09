@@ -129,6 +129,5 @@ module.exports = {
     InsertEnterprise_selected,
     InsertEnterprise_evaluation,
     InsertContact,
-    InsertAnswers_to_question,
-    a
+    InsertAnswers_to_question
 };
