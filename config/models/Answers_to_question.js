@@ -30,6 +30,6 @@ const Answer_to_question = connection.define('Answer_to_question', {
         freezeTableName: true,
         operatorsAliases: false
     });
-Answer_to_question.belongsTo(Questions, { foreignKey: 'Question_ID' });
+Answer_to_question.belongsTo(Questions, { as: 'Question_ID_as', foreignKey: 'Question_ID' });
 
 module.exports = Answer_to_question;

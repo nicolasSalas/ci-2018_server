@@ -9,11 +9,11 @@ module.exports = {
             .then(() => propiety.create(data))
             .then(result => {
                 res.status(200);
-                res.json({success: true, token: services.createToken(data), id:result.ID})
+                res.json({ success: true, token: services.createToken(data), id: result.ID })
             })
             .catch((error) => {
                 res.status(500);
-                res.json({error: error, stackError: error.stack});
+                res.json({ error: error, stackError: error.stack });
             });
     },
     Update: (propiety, data, res) => {
@@ -22,19 +22,19 @@ module.exports = {
             .then(() => propiety.update({
                 username: data.username
             }, {
-                where: {
-                    id: data.id
-                }
-            }))
+                    where: {
+                        id: data.id
+                    }
+                }))
             .then(result => {
                 res.status(200);
-                res.json({success: true})
+                res.json({ success: true })
             })
             .catch(error => {
                 res.status(500);
-                res.json({error: error, stackError: error.stack});
+                res.json({ error: error, stackError: error.stack });
             })
-        },
+    },
     Delete: (propiety, data, res) => {
         propiety
             .sync()
@@ -45,13 +45,13 @@ module.exports = {
             }))
             .then(result => {
                 res.status(200);
-                res.json({success: true})
+                res.json({ success: true })
             })
             .catch(error => {
                 res.status(500);
-                res.json({error: error, stackError: error.stack});
+                res.json({ error: error, stackError: error.stack });
             })
-        },
+    },
     Read: (propiety, data, res) => {
         propiety
             .sync()
@@ -60,27 +60,32 @@ module.exports = {
             }))
             .then(result => {
                 res.status(200);
-                res.json({success: true, data: result})
+                res.json({ success: true, data: result })
             })
             .catch(error => {
                 res.status(500);
-                res.json({error: error, stackError: error.stack});
+                res.json({ error: error, stackError: error.stack });
             })
-        },
+    },
     ReadWhere: (propiety, data, res) => {
-            propiety
-                .sync()
-                .then(() => propiety.findAll({
-                    where: data
-                }))
-                .then(result => {
-                    res.status(200);
-                    res.json({success: true, data: result})
-                    console.log(result)
-                })
-                .catch(error => {
-                    res.status(500);
-                    res.json({error: error, stackError: error.stack});
-                })
-            }
+        propiety
+            .sync()
+            .then(() => propiety.findAll({
+                where: data
+            }))
+            .then(result => {
+
+
+
+
+
+                res.status(200);
+                res.json({ success: true, data: result })
+                console.log(result)
+            })
+            .catch(error => {
+                res.status(500);
+                res.json({ error: error, stackError: error.stack });
+            })
+    }
 }

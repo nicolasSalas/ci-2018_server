@@ -17,10 +17,8 @@ const ReadSubSector_And_ID = {
 const ReadEnterprise_Stored = {
     Subsector_ID: Joi.number().integer().required(),
 }
-ReadMailSurveyed_And_ID = {
-    ID: Joi.number().integer().required(),
+const ReadMailSurveyed_And_ID = {
     Enterprise_Evaluation_ID: Joi.number().integer().required(),
-    Surveyed_ID: Joi.number().integer().required()
 }
 
 module.exports = {
