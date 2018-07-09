@@ -88,11 +88,6 @@ const InsertVariablesSelected = {
 const InsertSurveyed = {
     Type: Joi.string().required(),
 }
-const InsertMail_surveyed = {
-    Mail: Joi.string().required(),
-    Enterprise_Evaluation_ID: Joi.number().integer().required(),
-    Surveyed_ID: Joi.number().integer().required()
-}
 
 const InsertRelationship = {
     Mail_Surveyed_ID: Joi.number().integer().required(),
@@ -103,10 +98,6 @@ const InsertRelationship = {
 
 const InsertSector = {
     Name: Joi.string().required(),
-}
-
-const InsertSize = {
-    Quantity: Joi.number().integer().required()
 }
 
 const InsertSubSector = {
@@ -121,7 +112,6 @@ module.exports = {
     InsertVariables,
     InsertVariablesSelected,
     InsertSurveyed,
-    InsertSize,
     InsertRelationship,
     InsertMail_surveyed,
     InsertFactor,
