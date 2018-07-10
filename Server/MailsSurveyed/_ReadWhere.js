@@ -14,7 +14,6 @@ router.post('/GetMailSurveyed_And_ID', urlencodedParser, (req, res) => {
         console.log('request body not found');
         return res.sendStatus(400);
     }
-
     let data = req.body;
     console.log(data)
     const { error } = Joi.validate(data, ReadMailSurveyed_And_ID);

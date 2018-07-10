@@ -71,7 +71,9 @@ module.exports = {
         propiety
             .sync()
             .then(() => propiety.findAll({
-                where: data
+                Where: {
+                    Enterprise_Evaluation_ID: data
+                }
             }))
             .then(result => {
                 res.status(200);
