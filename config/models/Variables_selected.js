@@ -89,7 +89,7 @@ const Variables_Selected = connection.define('Variables_selected', {
     },
     Answer_3: {
         type: sequelize.STRING,
-        field: 'Answer_4'
+        field: 'Answer_3'
     },
     Answer_4: {
         type: sequelize.STRING,
