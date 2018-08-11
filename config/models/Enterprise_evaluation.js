@@ -35,6 +35,10 @@ const Enterprise_evaluation = connection.define('Enterprise_evaluation', {
         type: sequelize.STRING,
         field: 'City'
     },
+    Expert: {
+        type: sequelize.INTEGER,
+        field: 'Expert',
+    },
     Commune: {
         type: sequelize.STRING,
         field: 'Commune'

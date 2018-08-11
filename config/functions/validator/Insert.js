@@ -16,6 +16,7 @@ const InsertEnterprise_evaluation = {
     Contact_Name: Joi.string().required(),
     Enterprise_Name: Joi.string().required(),
     Position: Joi.string().required(),
+    Expert: Joi.number().integer().required(),
     Mail: Joi.string().email().required(),
     Address: Joi.string().required(),
     City: Joi.string().required(),
