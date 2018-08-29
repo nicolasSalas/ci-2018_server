@@ -10,7 +10,7 @@ module.exports = {
         const payload = {
             sub: data.token,
             iat: moment().unix(),
-            exp: moment().add(5, 'minutes').unix(),
+            exp: moment().add(1, 'days').unix(),
         }
         return jwt.encode(payload, config.SECRET_TOKEN_SERVER)
     },
