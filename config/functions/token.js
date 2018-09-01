@@ -42,5 +42,28 @@ module.exports = {
                     break;
             }
         }
+    },
+    verifyToken: (req, res, next) => {
+        const bearerHeader = req.headers['authorization'];
+        // Check if bearer is undefined
+        console.log(bearerHeader);
+        if (typeof bearerHeader !== 'undefined') {
+            // Split at the space
+            const bearer = bearerHeader.split(' ');
+            if (bearer[0] === 'JERA') {
+                // Get token from array
+                const bearerToken = bearer[1];
+                // Set the token
+                req.token = bearerToken;
+                // Next middleware
+                next();
+            } else {
+                res.sendStatus(403);
+            }
+        } else {
+            // Forbidden
+            res.sendStatus(403);
+        }
+
     }
 }
