@@ -1,10 +1,12 @@
 const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
+//NEW
 const jwt = require('jsonwebtoken');
 const urlencodedParser = bodyParser.urlencoded({extended: false})
-
+//NEW
 const KEY = require('../../config/functions/token');
+//NEW
 const { SECRET_TOKEN_CLIENT } = require('../../config');
 const Sector = require('../../config/models/Sector'); //MODEL
 const CRUD = require('../../config/functions/API'); // API
