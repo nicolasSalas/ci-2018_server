@@ -23,7 +23,6 @@ router.post('/GetSectorId_from_enterprise_evaluation', KEY.verifyToken,  urlenco
             res.sendStatus(403);
         } else {
             let data = req.body;
-            console.log(data)
             const {
                 error
             } = Joi.validate(data, ReadSectorID_From_Enterprise_Evaluation);

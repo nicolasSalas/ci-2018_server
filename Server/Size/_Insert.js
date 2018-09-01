@@ -5,7 +5,6 @@ const Joi = require('joi');
 const jwt = require('jsonwebtoken');
 const urlencodedParser = bodyParser.urlencoded({extended: false})
 
-const KEY = require('../../config/functions/token');
 const KEY = require('../../config/functions/token'); //TOKEN VALIDATOR
 const Size = require('../../config/models/Size'); //MODEL
 const CRUD = require('../../config/functions/API'); // API

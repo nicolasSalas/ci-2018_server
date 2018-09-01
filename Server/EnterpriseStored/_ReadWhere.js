@@ -23,7 +23,6 @@ router.post('/GetEnterprise_Stored', KEY.verifyToken,  urlencodedParser, (req, r
             res.sendStatus(403);
         } else {
             let data = req.body;
-            console.log(data)
             const {
                 error
             } = Joi.validate(data, ReadEnterprise_Stored);

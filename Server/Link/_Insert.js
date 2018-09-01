@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const bodyParser = require('body-parser');
 const Joi = require('joi');
+const jwt = require('jsonwebtoken');
 const urlencodedParser = bodyParser.urlencoded({extended: false})
 
 const Link = require('../../config/models/Link'); //MODEL

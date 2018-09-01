@@ -23,7 +23,6 @@ router.post('/GetLink', KEY.verifyToken, urlencodedParser, (req, res) => {
           res.sendStatus(403);
         } else {
           let data = req.body;
-          console.log(data)
           const {error} = Joi.validate(data, ReadLink);
       
           if (error) {
