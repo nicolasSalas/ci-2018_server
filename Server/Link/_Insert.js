@@ -7,25 +7,39 @@ const urlencodedParser = bodyParser.urlencoded({extended: false})
 const Link = require('../../config/models/Link'); //MODEL
 const CRUD = require('../../config/functions/API'); // API
 const {InsertLink} = require('../../config/functions/validator/Insert'); // VALIDATOR
+const { SECRET_TOKEN_CLIENT } = require('../../config'); //TOKEN
+const KEY = require('../../config/functions/token'); //TOKEN VALIDATOR
 
-router.post('/InsertLink', urlencodedParser, (req, res) => {
+router.post('/InsertLink', KEY.verifyToken, urlencodedParser, (req, res) => {
 
     if (!req.body || req.body.length === 0) {
         console.log('request body not found');
         return res.sendStatus(400);
     }
 
-    let data = req.body;
+    jwt.verify(req.token, SECRET_TOKEN_CLIENT, (err, authData) => {
+        if (err) {
+            res.sendStatus(403);
+        } else {
 
-    const {error} = Joi.validate(data, InsertLink);
+            let data = req.body;
 
-    if (error) {
-        res
-            .status(401)
-            .json({success: false, error: error.details});
-    } else {
-        CRUD.Insert(Link, data, res);
-    }
+            const {
+                error
+            } = Joi.validate(data, InsertLink);
+
+            if (error) {
+                res
+                    .status(401)
+                    .json({
+                        success: false,
+                        error: error.details
+                    });
+            } else {
+                CRUD.Insert(Link, data, res);
+            }
+        }
+    });
 
 });
 

@@ -9,7 +9,7 @@ const Link = require('../../config/models/Link'); //MODEL
 const CRUD = require('../../config/functions/API'); // API
 const KEY = require('../../config/functions/token');
 const { ReadLink } = require('../../config/functions/validator/Read'); // VALIDATOR
-const { SECRET_TOKEN_CLIENT } = require('../../config');
+const { SECRET_TOKEN_CLIENT } = require('../../config'); //TOKEN
 
 router.post('/GetLink', KEY.verifyToken, urlencodedParser, (req, res) => {
 
