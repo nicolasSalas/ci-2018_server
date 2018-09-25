@@ -52,7 +52,7 @@ gulp.task('production', function() {
   gulp.src('./views/index.ejs')
     .pipe(htmlreplace({
       base: {
-        src: 'http://mainmia.us-west-2.elasticbeanstalk.com/',
+        src: 'Serverprod.us-west-2.elasticbeanstalk.com ',
         tpl: '<!-- build:base --> <base href="%s"> <!-- endbuild -->'
       }
     }))
