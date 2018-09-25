@@ -24,7 +24,6 @@ router.post('/GetSubsector_and_id', KEY.verifyToken,urlencodedParser, (req, res)
           res.sendStatus(403);
         } else {
             let data = req.body;
-            console.log(data)
             const {error} = Joi.validate(data, ReadSubSector_And_ID);
         
             if (error) {
