@@ -11,12 +11,13 @@ const Sector = require('../../config/models/Sector'); //MODEL
 const CRUD = require('../../config/functions/API'); // API
 const {InsertSector} = require('../../config/functions/validator/Insert'); // VALIDATOR
 
-router.post('/InsertSector', KEY.verifyToken,urlencodedParser, (req, res) => {
+router.post('/InsertSector', KEY.verifyToken, urlencodedParser, (req, res) => {
 
     if (!req.body || req.body.length === 0) {
         console.log('request body not found');
         return res.sendStatus(400);
     }
+    
     jwt.verify(req.token, SECRET_TOKEN_CLIENT, (err, authData) => {
         if(err) {
           res.sendStatus(403);

@@ -18,15 +18,11 @@ module.exports = {
         try {
             let auth = jwt.decode(token, config.SECRET_TOKEN_CLIENT)
 
-            console.log(auth);
-
             if (auth.sub === 'VALIDO') {
                 return false;
             }
 
         } catch (e) {
-            console.log(e.toString())
-
             switch (e.toString()) {
                 case 'Error: Token expired':
                     return e.toString();

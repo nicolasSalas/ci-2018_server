@@ -24,18 +24,10 @@ router.post('/InsertLink', KEY.verifyToken, urlencodedParser, (req, res) => {
         } else {
 
             let data = req.body;
-
-            const {
-                error
-            } = Joi.validate(data, InsertLink);
+            const { error } = Joi.validate(data, InsertLink);
 
             if (error) {
-                res
-                    .status(401)
-                    .json({
-                        success: false,
-                        error: error.details
-                    });
+                res.status(401).json({ success: false, error: error.details});
             } else {
                 CRUD.Insert(Link, data, res);
             }
