@@ -9,7 +9,7 @@ var htmlreplace = require('gulp-html-replace');
 
 gulp.src("./src/view/home.html")
 
-  .pipe(notify("Hello Human!"));
+  .pipe(notify("Thanks Human!"));
 
 gulp.task('serve',['dev'], function() {
   
@@ -27,7 +27,7 @@ gulp.task('serve',['dev'], function() {
 
 setTimeout(() => {
   bs.init({
-    logPrefix: "Snuuper",
+    logPrefix: "Server",
     notify: true,
     logConnections: true,
     proxy: "localhost:8085"
@@ -52,7 +52,7 @@ gulp.task('production', function() {
   gulp.src('./views/index.ejs')
     .pipe(htmlreplace({
       base: {
-        src: 'Serverprod.us-west-2.elasticbeanstalk.com ',
+        src: 'http://serverprod.us-west-2.elasticbeanstalk.com/',
         tpl: '<!-- build:base --> <base href="%s"> <!-- endbuild -->'
       }
     }))
