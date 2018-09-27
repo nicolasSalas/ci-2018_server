@@ -14,6 +14,10 @@ const Mail_Surveyed = connection.define('Mail_surveyed', {
     Mail: {
         type: sequelize.STRING,
         field: 'Mail'
+    },
+    status: {
+        type: sequelize.TINYINT,
+        field: 'status'
     }
 },
     {

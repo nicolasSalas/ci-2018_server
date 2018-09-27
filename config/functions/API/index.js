@@ -68,12 +68,13 @@ module.exports = {
             })
     },
     ReadWhere: (propiety, data, res) => {
+
+        console.log('PROPERTY', propiety);
+        console.log('DATA', data);
         propiety
             .sync()
             .then(() => propiety.findAll({
-                Where: {
-                    Enterprise_Evaluation_ID: data
-                }
+                where: data
             }))
             .then(result => {
                 res.status(200);

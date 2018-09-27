@@ -30,6 +30,8 @@ router.post('/GetLink', KEY.verifyToken, urlencodedParser, (req, res) => {
                   .status(401)
                   .json({success: false, error: error.details});
           } else {
+              
+              console.log(Link)
               CRUD.ReadWhere(Link, data, res);
           }
         }
