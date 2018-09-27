@@ -16,15 +16,14 @@ module.exports = {
                 res.json({ error: error, stackError: error.stack });
             });
     },
-    Update: (propiety, data, res) => {
+    Update: (propiety, data, data1, res) => {
+        //data = {status: 1}
+        //data1 = {ID: 132}
+
         propiety
             .sync()
-            .then(() => propiety.update({
-                username: data.username
-            }, {
-                    where: {
-                        id: data.id
-                    }
+            .then(() => propiety.update(data, {
+                    where: data1
                 }))
             .then(result => {
                 res.status(200);
