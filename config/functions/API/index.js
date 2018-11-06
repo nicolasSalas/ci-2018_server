@@ -23,7 +23,7 @@ module.exports = {
         propiety
             .sync()
             .then(() => propiety.update(data, {
-                    where: data1
+                    where: data.id
                 }))
             .then(result => {
                 res.status(200);

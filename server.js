@@ -46,6 +46,12 @@ var Read_Link = require('./Server/Link/_Read');
 var GetSectorId_from_enterprise_evaluation = require('./Server/EnterpriseEvaluation/_ReadWhere');
 var GetSubsector_and_id = require('./Server/Subsector/_ReadWhere');
 var GetMailSurveyed_And_ID = require('./Server/MailsSurveyed/_ReadWhere')
+
+//
+
+var UpdateStatus = require('./Server/MailsSurveyed/_Update');
+
+
 app.use('/webservices',
     Insert_AnswerToQuestion,
     Insert_Contact,
@@ -68,7 +74,8 @@ app.use('/webservices',
     Read_Link,
     GetSectorId_from_enterprise_evaluation,
     GetSubsector_and_id,
-    GetMailSurveyed_And_ID
+    GetMailSurveyed_And_ID,
+    UpdateStatus
 
 );
 
