@@ -111,6 +111,13 @@ const InsertMail_surveyed = {
     Enterprise_Evaluation_ID: Joi.number().integer().required(),
     Surveyed_ID: Joi.number().integer().required()
 }
+
+const InsertNatural_person={
+    Sector_ID: Joi.number().integer().required(),
+    Name: Joi.string().required(),
+    Position: Joi.string().required()
+}
+
 module.exports = {
     InsertLink,
     InsertSector,
@@ -125,5 +132,6 @@ module.exports = {
     InsertEnterprise_selected,
     InsertEnterprise_evaluation,
     InsertContact,
-    InsertAnswers_to_question
+    InsertAnswers_to_question,
+    InsertNatural_person
 };
