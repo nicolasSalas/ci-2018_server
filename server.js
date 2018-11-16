@@ -42,6 +42,7 @@ var Insert_Surveyed = require("./Server/Surveyed/_Insert");
 var Insert_Variables = require("./Server/Variables/_Insert");
 var Insert_VariablesSelected = require("./Server/VariablesSelected/_Insert");
 var InsertNatural_person = require("./Server/NaturalPerson/_Insert");
+var InsertRelationShip_person = require("./Server/RelationShipPerson/_Insert");
 var GetEnterprise_Stored = require("./Server/EnterpriseStored/_ReadWhere");
 
 //
@@ -71,6 +72,7 @@ app.use(
   Insert_Variables,
   Insert_VariablesSelected,
   InsertNatural_person,
+  InsertRelationShip_person,
   GetEnterprise_Stored,
   Read_Sector,
   Read_Link,

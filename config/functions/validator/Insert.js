@@ -117,6 +117,11 @@ const InsertNatural_person={
     Name: Joi.string().required(),
     Position: Joi.string().required()
 }
+const InsertRelationShip_person={
+    Enterprise_Selected_ID: Joi.number().integer().required(),
+    Variables_Selected_ID: Joi.number().integer().required(),
+    Answer_To_Question_ID: Joi.number().integer().required()
+}
 
 module.exports = {
     InsertLink,
@@ -133,5 +138,6 @@ module.exports = {
     InsertEnterprise_evaluation,
     InsertContact,
     InsertAnswers_to_question,
-    InsertNatural_person
+    InsertNatural_person,
+    InsertRelationShip_person
 };
