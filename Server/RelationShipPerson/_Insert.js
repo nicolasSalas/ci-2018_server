@@ -37,4 +37,8 @@ router.post('/Insert_RelationShipPerson',KEY.verifyToken, urlencodedParser, (req
     
 });
 
+<<<<<<< HEAD
 module.exports = router;
+=======
+module.exports = router;
+>>>>>>> 37941c0184614eb4f147b45a7d09444d6ea86b5f
