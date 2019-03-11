@@ -1,7 +1,5 @@
 var express = require("express");
 var path = require("path");
-var https = require("https");
-var fs = require("fs");
 var app = express();
 
 app.use(express.static(path.join(__dirname, "src")));
@@ -85,17 +83,9 @@ app.use(
   Read_View
 );
 
-https
-  .createServer(
-    {
-      key: fs.readFileSync("server.key"),
-      cert: fs.readFileSync("server.cert")
-    },
-    app
-  )
-  .listen(8081, () => {
-    console.log("Listening in 8081 port... ");
-  });
+app.listen(8081, function() {
+  console.log("El servidor Esta En llamas!");
+});
 
 // var connection = mysql.createConnection({   host: process.env.RDS_HOSTNAME,
 // user: process.env.RDS_USERNAME,   password: process.env.RDS_PASSWORD,
