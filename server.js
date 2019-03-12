@@ -7,19 +7,22 @@ app.use(express.static(path.join(__dirname, "src")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept,Authorization"
-//     //"Origin, X-Requested-With, Content-Type, Accept,Access-Control-Allow-Headers, Authorization"
-//   );
-//   res.header(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
-//   );
-//   next();
-// });
+app.use(function(req, res, next) {
+  res.header(
+    "Access-Control-Allow-Origin",
+    "https://corporateindex.cl/EmpatiaCorporativa/#/"
+  );
+  res.header(
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept,Authorization",
+    "Origin, X-Requested-With, Content-Type, Accept,Access-Control-Allow-Headers, Authorization"
+  );
+  res.header(
+    "Access-Control-Allow-Methods",
+    "GET, POST, PUT, PATCH, DELETE, OPTIONS"
+  );
+  next();
+});
 
 app.get("/", function(request, resp, next) {
   resp.render("index");

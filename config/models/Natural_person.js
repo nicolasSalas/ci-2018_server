@@ -1,4 +1,3 @@
-
 const sequelize = require('sequelize');
 const connection = require('../conection');
 const Sector = require('./Sector');
@@ -18,12 +17,13 @@ const Natural_person = connection.define('Natural_person', {
         type: sequelize.STRING,
         field: 'Position'
     },
-   
+
 }, {
-        freezeTableName: true,
-        operatorsAliases: false
-    });
+    freezeTableName: true,
+    operatorsAliases: false
+});
 
-Natural_person.belongsTo(Sector, { as: 'Sector_ID_as', foreignKey: 'Sector_ID' });
-
-module.exports = Natural_person;
+Natural_person.belongsTo(Sector, {
+    as: 'Sector_ID_as',
+    foreignKey: 'Sector_ID'
+});
