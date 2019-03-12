@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-=======
-
->>>>>>> 37941c0184614eb4f147b45a7d09444d6ea86b5f
 const sequelize = require('sequelize');
 const connection = require('../conection');
 const Sector = require('./Sector');
@@ -21,16 +17,13 @@ const Natural_person = connection.define('Natural_person', {
         type: sequelize.STRING,
         field: 'Position'
     },
-   
+
 }, {
-        freezeTableName: true,
-        operatorsAliases: false
-    });
+    freezeTableName: true,
+    operatorsAliases: false
+});
 
-Natural_person.belongsTo(Sector, { as: 'Sector_ID_as', foreignKey: 'Sector_ID' });
-
-<<<<<<< HEAD
-module.exports = Natural_person;
-=======
-module.exports = Natural_person;
->>>>>>> 37941c0184614eb4f147b45a7d09444d6ea86b5f
+Natural_person.belongsTo(Sector, {
+    as: 'Sector_ID_as',
+    foreignKey: 'Sector_ID'
+});
