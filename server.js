@@ -7,10 +7,10 @@ app.use(express.static(path.join(__dirname, "src")));
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
   res.header(
     "Access-Control-Allow-Origin",
-    "https://corporateindex.cl/EmpatiaCorporativa/#/"
+    "https://corporateindex.cl"
   );
   res.header(
     "Access-Control-Allow-Headers",
@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
   next();
 });
 
-app.get("/", function(request, resp, next) {
+app.get("/", function (request, resp, next) {
   resp.render("index");
 });
 
@@ -86,7 +86,7 @@ app.use(
   Read_View
 );
 
-app.listen(8081, function() {
+app.listen(8081, function () {
   console.log("El servidor Esta En llamas!");
 });
 
