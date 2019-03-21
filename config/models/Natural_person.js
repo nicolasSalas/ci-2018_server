@@ -17,7 +17,11 @@ const Natural_person = connection.define('Natural_person', {
         type: sequelize.STRING,
         field: 'Position'
     },
-   
+    Mail: {
+        type: sequelize.STRING,
+        field: 'Mail'
+    }
+
 }, {
         freezeTableName: true,
         operatorsAliases: false

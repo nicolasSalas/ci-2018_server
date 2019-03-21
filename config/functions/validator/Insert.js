@@ -212,7 +212,10 @@ const InsertNatural_person = {
     .integer()
     .required(),
   Name: Joi.string().required(),
-  Position: Joi.string().required()
+  Position: Joi.string().required(),
+  Mail: Joi.string()
+    .email()
+    .required()
 };
 const InsertRelationShip_person = {
   Enterprise_Selected_ID: Joi.number()

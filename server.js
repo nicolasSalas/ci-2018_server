@@ -24,7 +24,7 @@ app.use(cors());
 //   next();
 // });
 
-app.get("/", function(request, resp, next) {
+app.get("/", function (request, resp, next) {
   resp.render("index");
 });
 
@@ -86,13 +86,8 @@ app.use(
   Read_View
 );
 
-<<<<<<< HEAD
-app.listen(8081, function() {
-  console.log("El servidor Esta En llamas!");
-=======
-app.listen(3001, function() {
+app.listen(3001, function () {
   console.log("El servidor Esta En llamas in 3001 port");
->>>>>>> cde3584995a9232bc1d6f994a7e59fbd28a4a474
 });
 
 // var connection = mysql.createConnection({   host: process.env.RDS_HOSTNAME,
