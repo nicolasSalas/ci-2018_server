@@ -56,6 +56,7 @@ var Read_GetEnterpriseEvaluation = require("./Server/EnterpriseEvaluation/_Read"
 var GetSectorId_from_enterprise_evaluation = require("./Server/EnterpriseEvaluation/_ReadWhere");
 var GetSubsector_and_id = require("./Server/Subsector/_ReadWhere");
 var GetMailSurveyed_And_ID = require("./Server/MailsSurveyed/_ReadWhere");
+var ReadMail = require("./Server/NaturalPerson/_ReadWhere");
 app.use(
   "/webservices",
   Insert_AnswerToQuestion,
@@ -83,7 +84,8 @@ app.use(
   GetSubsector_and_id,
   GetMailSurveyed_And_ID,
   Read_GetEnterpriseEvaluation,
-  Read_View
+  Read_View,
+  ReadMail
 );
 
 app.listen(3001, function () {
