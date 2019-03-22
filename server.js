@@ -10,21 +10,7 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(cors());
 
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept,Authorization"
-//     //"Origin, X-Requested-With, Content-Type, Accept,Access-Control-Allow-Headers, Authorization"
-//   );
-//   res.header(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
-//   );
-//   next();
-// });
-
-app.get("/", function (request, resp, next) {
+app.get("/", function(request, resp, next) {
   resp.render("index");
 });
 
@@ -56,7 +42,7 @@ var Read_GetEnterpriseEvaluation = require("./Server/EnterpriseEvaluation/_Read"
 var GetSectorId_from_enterprise_evaluation = require("./Server/EnterpriseEvaluation/_ReadWhere");
 var GetSubsector_and_id = require("./Server/Subsector/_ReadWhere");
 var GetMailSurveyed_And_ID = require("./Server/MailsSurveyed/_ReadWhere");
-var ReadMail = require("./Server/NaturalPerson/_ReadWhere");
+var ReadMail = require("./Server/NaturalPerson/_Validate");
 app.use(
   "/webservices",
   Insert_AnswerToQuestion,
@@ -88,13 +74,6 @@ app.use(
   ReadMail
 );
 
-app.listen(3001, function () {
+app.listen(3001, function() {
   console.log("El servidor Esta En llamas in 3001 port");
 });
-
-// var connection = mysql.createConnection({   host: process.env.RDS_HOSTNAME,
-// user: process.env.RDS_USERNAME,   password: process.env.RDS_PASSWORD,
-// database: process.env.RDS_DATABASE,   port: process.env.RDS_PORT });
-// connection.connect(function (err) {   if (err) {     console.error('Database
-// connection failed: ' + err.stack);     return;   }   console.log('Connected
-// to database.'); }); connection.end();
