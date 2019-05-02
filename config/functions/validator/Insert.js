@@ -229,6 +229,24 @@ const InsertRelationShip_person = {
     .required()
 };
 
+const InsertAutoEvaluation = {
+  Sub_Sector_ID: Joi.number().integer().required(),
+  Enterprise_Name: Joi.string().required(),
+  Position: Joi.string().required(),
+};
+
+const InsertRelationship_Auto_Evaluation = {
+  Auto_Evaluation_ID: Joi.number()
+    .integer()
+    .required(),
+  Variables_Selected_ID: Joi.number()
+    .integer()
+    .required(),
+  Answer_To_Question_ID: Joi.number()
+    .integer()
+    .required()
+};
+
 module.exports = {
   InsertLink,
   InsertSector,
@@ -245,5 +263,7 @@ module.exports = {
   InsertContact,
   InsertAnswers_to_question,
   InsertNatural_person,
-  InsertRelationShip_person
+  InsertRelationShip_person,
+  InsertAutoEvaluation,
+  InsertRelationship_Auto_Evaluation
 };
