@@ -38,6 +38,9 @@ var GetEnterprise_Stored = require("./Server/EnterpriseStored/_ReadWhere");
 var Read_Sector = require("./Server/Sector/_Read");
 var Read_Link = require("./Server/Link/_Read");
 var Read_View = require("./Server/GetDataView/_Read");
+var Read_Person_View = require("./Server/GetPersonaView/_Read")
+var F2_Empresas = require("./Server/F2_Empresas/_Read")
+var F2_Persona = require("./Server/F2_Persona/_Read")
 var Read_GetEnterpriseEvaluation = require("./Server/EnterpriseEvaluation/_Read");
 var GetSectorId_from_enterprise_evaluation = require("./Server/EnterpriseEvaluation/_ReadWhere");
 var GetSubsector_and_id = require("./Server/Subsector/_ReadWhere");
@@ -71,9 +74,12 @@ app.use(
   GetMailSurveyed_And_ID,
   Read_GetEnterpriseEvaluation,
   Read_View,
-  ReadMail
+  ReadMail,
+  Read_Person_View,
+  F2_Empresas,
+  F2_Persona
 );
 
-app.listen(3001, function() {
-  console.log("El servidor Esta En llamas in 3001 port");
+app.listen(3000, function() {
+  console.log("El servidor Esta En llamas in 3000 port");
 });
