@@ -23,6 +23,6 @@ const Auto_Evaluation = connection.define('Auto_Evaluation', {
         operatorsAliases: false
     });
 
-Auto_Evaluation.belongsTo(Sub_Sector, { as: 'Sub_Sector_ID_as', foreignKey: 'Sub_Sector_ID' });
+Auto_Evaluation.belongsTo(Sub_Sector, { as: 'Sector_ID_as', foreignKey: 'Sector_ID' });
 
 module.exports = Auto_Evaluation;

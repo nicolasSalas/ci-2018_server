@@ -230,7 +230,7 @@ const InsertRelationShip_person = {
 };
 
 const InsertAutoEvaluation = {
-  Sub_Sector_ID: Joi.number().integer().required(),
+  Sector_ID: Joi.number().integer().required(),
   Enterprise_Name: Joi.string().required(),
   Position: Joi.string().required(),
 };
