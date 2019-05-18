@@ -32,5 +32,9 @@ RelationShip_person.belongsTo(Answer_to_question, {
   as: "Answer_To_Question_ID_as",
   foreignKey: "Answer_To_Question_ID"
 });
+RelationShip_person.belongsTo(Answer_to_question, {
+  as: 'Answer_To_Question_ID_2_as',
+  foreignKey: 'Answer_To_Question_ID_2'
+});
 
 module.exports = RelationShip_person;

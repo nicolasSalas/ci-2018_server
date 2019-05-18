@@ -182,6 +182,9 @@ const InsertRelationship = {
     .required(),
   Answer_To_Question_ID: Joi.number()
     .integer()
+    .required(),
+  Answer_To_Question_ID_2: Joi.number()
+    .integer()
     .required()
 };
 
@@ -226,6 +229,9 @@ const InsertRelationShip_person = {
     .required(),
   Answer_To_Question_ID: Joi.number()
     .integer()
+    .required(),
+  Answer_To_Question_ID_2: Joi.number()
+    .integer()
     .required()
 };
 
@@ -243,6 +249,9 @@ const InsertRelationship_Auto_Evaluation = {
     .integer()
     .required(),
   Answer_To_Question_ID: Joi.number()
+    .integer()
+    .required(),
+  Answer_To_Question_ID_2: Joi.number()
     .integer()
     .required()
 };

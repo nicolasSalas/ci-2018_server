@@ -32,5 +32,9 @@ Relationship_Auto_Evaluation.belongsTo(Answer_to_question, {
   as: "Answer_To_Question_ID_as",
   foreignKey: "Answer_To_Question_ID"
 });
+Relationship_Auto_Evaluation.belongsTo(Answer_to_question, {
+  as: "Answer_To_Question_ID_2_as",
+  foreignKey: "Answer_To_Question_ID_2"
+});
 
 module.exports = Relationship_Auto_Evaluation;
