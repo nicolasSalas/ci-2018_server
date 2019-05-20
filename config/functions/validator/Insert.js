@@ -221,6 +221,9 @@ const InsertNatural_person = {
     .required()
 };
 const InsertRelationShip_person = {
+  Natural_Person_ID: Joi.number()
+    .integer()
+    .required(),
   Enterprise_Selected_ID: Joi.number()
     .integer()
     .required(),
