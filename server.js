@@ -33,6 +33,8 @@ var Insert_VariablesSelected = require("./Server/VariablesSelected/_Insert");
 var InsertNatural_person = require("./Server/NaturalPerson/_Insert");
 var InsertRelationShip_person = require("./Server/RelationShipPerson/_Insert");
 var GetEnterprise_Stored = require("./Server/EnterpriseStored/_ReadWhere");
+var Insert_Auto_Evaluation = require("./Server/Auto_Evaluation/_Insert");
+var InsertRelationship_Auto_Evaluation = require("./Server/Relationship_Auto_Evaluation/_Insert");
 
 //
 var Read_Sector = require("./Server/Sector/_Read");
@@ -41,6 +43,7 @@ var Read_View = require("./Server/GetDataView/_Read");
 var Read_Person_View = require("./Server/GetPersonaView/_Read")
 var F2_Empresas = require("./Server/F2_Empresas/_Read")
 var F2_Persona = require("./Server/F2_Persona/_Read")
+var AutoEvaluationView = require("./Server/AutoEvaluationView/_Read");
 var Read_GetEnterpriseEvaluation = require("./Server/EnterpriseEvaluation/_Read");
 var GetSectorId_from_enterprise_evaluation = require("./Server/EnterpriseEvaluation/_ReadWhere");
 var GetSubsector_and_id = require("./Server/Subsector/_ReadWhere");
@@ -77,7 +80,10 @@ app.use(
   ReadMail,
   Read_Person_View,
   F2_Empresas,
-  F2_Persona
+  F2_Persona,
+  Insert_Auto_Evaluation,
+  InsertRelationship_Auto_Evaluation,
+  AutoEvaluationView
 );
 
 app.listen(3000, function() {

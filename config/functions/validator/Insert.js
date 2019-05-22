@@ -182,6 +182,9 @@ const InsertRelationship = {
     .required(),
   Answer_To_Question_ID: Joi.number()
     .integer()
+    .required(),
+  Answer_To_Question_ID_2: Joi.number()
+    .integer()
     .required()
 };
 
@@ -218,6 +221,9 @@ const InsertNatural_person = {
     .required()
 };
 const InsertRelationShip_person = {
+  Natural_Person_ID: Joi.number()
+    .integer()
+    .required(),
   Enterprise_Selected_ID: Joi.number()
     .integer()
     .required(),
@@ -225,6 +231,30 @@ const InsertRelationShip_person = {
     .integer()
     .required(),
   Answer_To_Question_ID: Joi.number()
+    .integer()
+    .required(),
+  Answer_To_Question_ID_2: Joi.number()
+    .integer()
+    .required()
+};
+
+const InsertAutoEvaluation = {
+  Sector_ID: Joi.number().integer().required(),
+  Enterprise_Name: Joi.string().required(),
+  Position: Joi.string().required(),
+};
+
+const InsertRelationship_Auto_Evaluation = {
+  Auto_Evaluation_ID: Joi.number()
+    .integer()
+    .required(),
+  Variables_Selected_ID: Joi.number()
+    .integer()
+    .required(),
+  Answer_To_Question_ID: Joi.number()
+    .integer()
+    .required(),
+  Answer_To_Question_ID_2: Joi.number()
     .integer()
     .required()
 };
@@ -245,5 +275,7 @@ module.exports = {
   InsertContact,
   InsertAnswers_to_question,
   InsertNatural_person,
-  InsertRelationShip_person
+  InsertRelationShip_person,
+  InsertAutoEvaluation,
+  InsertRelationship_Auto_Evaluation
 };
