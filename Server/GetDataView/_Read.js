@@ -20,7 +20,7 @@ router.get("/GetView", KEY.verifyToken, urlencodedParser, (req, res) => {
       res.sendStatus(403);
     } else {
       connection
-        .query("SELECT * FROM `GetData_2`", {
+        .query("SELECT * FROM `Enterprise_View`", {
           type: sequelize.QueryTypes.SELECT
         })
         .then(response => {
