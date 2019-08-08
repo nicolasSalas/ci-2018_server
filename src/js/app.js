@@ -4,13 +4,13 @@ var app = angular.module("Server", ["ngRoute", "ngResource", "angularSoap"])
 
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider
-    .when("/faseuno/", {
-      templateUrl: "/view/home.html",
+    .when("/", {
+      templateUrl: "faseuno/view/home.html",
       controller: "HomeCtrl"
     })
 
     .otherwise({
-      redirectTo: "/faseuno/"
+      redirectTo: "/"
     })
 })
 
