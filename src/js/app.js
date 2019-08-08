@@ -5,7 +5,7 @@ var app = angular.module("Server", ["ngRoute", "ngResource", "angularSoap"])
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when("/", {
-      templateUrl: "faseuno/view/home.html",
+      templateUrl: "/view/home.html",
       controller: "HomeCtrl"
     })
 
