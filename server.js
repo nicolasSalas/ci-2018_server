@@ -39,7 +39,8 @@ var InsertRelationship_Auto_Evaluation = require("./Server/Relationship_Auto_Eva
 //
 var Read_Sector = require("./Server/Sector/_Read")
 var Read_Link = require("./Server/Link/_Read")
-var Read_View = require("./Server/GetDataView/_Read")
+var GetPersonalSurvey = require("./Server/GetPersonalSurvey/_Read")
+var GetEnterpriseSurvey = require("./Server/GetEnterpriseSurvey/_Read")
 var AutoEvaluationView = require("./Server/AutoEvaluationView/_Read")
 var Read_GetEnterpriseEvaluation = require("./Server/EnterpriseEvaluation/_Read")
 var GetSectorId_from_enterprise_evaluation = require("./Server/EnterpriseEvaluation/_ReadWhere")
@@ -73,7 +74,8 @@ app.use(
   GetSubsector_and_id,
   GetMailSurveyed_And_ID,
   Read_GetEnterpriseEvaluation,
-  Read_View,
+  GetPersonalSurvey,
+  GetEnterpriseSurvey,
   ReadMail,
   Insert_Auto_Evaluation,
   InsertRelationship_Auto_Evaluation,
