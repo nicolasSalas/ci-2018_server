@@ -1,61 +1,52 @@
-var express = require("express");
-var path = require("path");
-var cors = require("cors");
-var app = express();
+var express = require("express")
+var path = require("path")
+var cors = require("cors")
+var app = express()
 
-app.use(express.static(path.join(__dirname, "src")));
+app.use(express.static(path.join(__dirname, "src")))
 
-app.set("view engine", "ejs");
-app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs")
+app.set("views", path.join(__dirname, "views"))
 
-app.use(cors());
-
-// app.use(function(req, res, next) {
-//   res.header("Access-Control-Allow-Origin", "*");
-//   res.header(
-//     "Access-Control-Allow-Headers",
-//     "Origin, X-Requested-With, Content-Type, Accept,Authorization"
-//     //"Origin, X-Requested-With, Content-Type, Accept,Access-Control-Allow-Headers, Authorization"
-//   );
-//   res.header(
-//     "Access-Control-Allow-Methods",
-//     "GET, POST, PUT, PATCH, DELETE, OPTIONS"
-//   );
-//   next();
-// });
+app.use(cors())
 
 app.get("/", function(request, resp, next) {
-  resp.render("index");
-});
+  resp.render("index")
+})
 
-var Insert_AnswerToQuestion = require("./Server/AnswerToQuestion/_Insert");
-var Insert_Contact = require("./Server/Contact/_Insert");
-var Insert_EnterpriseEvaluation = require("./Server/EnterpriseEvaluation/_Insert");
-var Insert_EnterpriseSelected = require("./Server/EnterpriseSelected/_Insert");
-var Insert_EnterpriseStored = require("./Server/EnterpriseStored/_Insert");
-var Insert_Factor = require("./Server/Factor/_Insert");
-var Insert_Link = require("./Server/Link/_Insert");
-var Insert_MailsSurveyed = require("./Server/MailsSurveyed/_Insert");
-var Insert_Question = require("./Server/Question/_Insert");
-var Insert_RelationShip = require("./Server/RelationShip/_Insert");
-var Insert_Sector = require("./Server/Sector/_Insert");
-var Insert_Size = require("./Server/Size/_Insert");
-var Insert_Subsector = require("./Server/Subsector/_Insert");
-var Insert_Surveyed = require("./Server/Surveyed/_Insert");
-var Insert_Variables = require("./Server/Variables/_Insert");
-var Insert_VariablesSelected = require("./Server/VariablesSelected/_Insert");
-var InsertNatural_person = require("./Server/NaturalPerson/_Insert");
-var InsertRelationShip_person = require("./Server/RelationShipPerson/_Insert");
-var GetEnterprise_Stored = require("./Server/EnterpriseStored/_ReadWhere");
+var Insert_AnswerToQuestion = require("./Server/AnswerToQuestion/_Insert")
+var Insert_Contact = require("./Server/Contact/_Insert")
+var Insert_EnterpriseEvaluation = require("./Server/EnterpriseEvaluation/_Insert")
+var Insert_EnterpriseSelected = require("./Server/EnterpriseSelected/_Insert")
+var Insert_EnterpriseStored = require("./Server/EnterpriseStored/_Insert")
+var Insert_Factor = require("./Server/Factor/_Insert")
+var Insert_Link = require("./Server/Link/_Insert")
+var Insert_MailsSurveyed = require("./Server/MailsSurveyed/_Insert")
+var Insert_Question = require("./Server/Question/_Insert")
+var Insert_RelationShip = require("./Server/RelationShip/_Insert")
+var Insert_Sector = require("./Server/Sector/_Insert")
+var Insert_Size = require("./Server/Size/_Insert")
+var Insert_Subsector = require("./Server/Subsector/_Insert")
+var Insert_Surveyed = require("./Server/Surveyed/_Insert")
+var Insert_Variables = require("./Server/Variables/_Insert")
+var Insert_VariablesSelected = require("./Server/VariablesSelected/_Insert")
+var InsertNatural_person = require("./Server/NaturalPerson/_Insert")
+var InsertRelationShip_person = require("./Server/RelationShipPerson/_Insert")
+var GetEnterprise_Stored = require("./Server/EnterpriseStored/_ReadWhere")
+var Insert_Auto_Evaluation = require("./Server/Auto_Evaluation/_Insert")
+var InsertRelationship_Auto_Evaluation = require("./Server/Relationship_Auto_Evaluation/_Insert")
 
 //
-var Read_Sector = require("./Server/Sector/_Read");
-var Read_Link = require("./Server/Link/_Read");
-var Read_View = require("./Server/GetDataView/_Read");
-var Read_GetEnterpriseEvaluation = require("./Server/EnterpriseEvaluation/_Read");
-var GetSectorId_from_enterprise_evaluation = require("./Server/EnterpriseEvaluation/_ReadWhere");
-var GetSubsector_and_id = require("./Server/Subsector/_ReadWhere");
-var GetMailSurveyed_And_ID = require("./Server/MailsSurveyed/_ReadWhere");
+var Read_Sector = require("./Server/Sector/_Read")
+var Read_Link = require("./Server/Link/_Read")
+var GetPersonalSurvey = require("./Server/GetPersonalSurvey/_Read")
+var GetEnterpriseSurvey = require("./Server/GetEnterpriseSurvey/_Read")
+var AutoEvaluationView = require("./Server/AutoEvaluationView/_Read")
+var Read_GetEnterpriseEvaluation = require("./Server/EnterpriseEvaluation/_Read")
+var GetSectorId_from_enterprise_evaluation = require("./Server/EnterpriseEvaluation/_ReadWhere")
+var GetSubsector_and_id = require("./Server/Subsector/_ReadWhere")
+var GetMailSurveyed_And_ID = require("./Server/MailsSurveyed/_ReadWhere")
+var ReadMail = require("./Server/NaturalPerson/_Validate")
 app.use(
   "/webservices",
   Insert_AnswerToQuestion,
@@ -83,16 +74,14 @@ app.use(
   GetSubsector_and_id,
   GetMailSurveyed_And_ID,
   Read_GetEnterpriseEvaluation,
-  Read_View
-);
+  GetPersonalSurvey,
+  GetEnterpriseSurvey,
+  ReadMail,
+  Insert_Auto_Evaluation,
+  InsertRelationship_Auto_Evaluation,
+  AutoEvaluationView
+)
 
-app.listen(3000, function() {
-  console.log("El servidor Esta En llamas!");
-});
-
-// var connection = mysql.createConnection({   host: process.env.RDS_HOSTNAME,
-// user: process.env.RDS_USERNAME,   password: process.env.RDS_PASSWORD,
-// database: process.env.RDS_DATABASE,   port: process.env.RDS_PORT });
-// connection.connect(function (err) {   if (err) {     console.error('Database
-// connection failed: ' + err.stack);     return;   }   console.log('Connected
-// to database.'); }); connection.end();
+app.listen(9000, function() {
+  console.log("El servidor Esta En llamas in 9000 port")
+})

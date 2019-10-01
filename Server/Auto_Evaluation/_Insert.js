@@ -3,26 +3,21 @@ const router = express.Router();
 const bodyParser = require('body-parser');
 const Joi = require('joi');
 const jwt = require('jsonwebtoken');
-const urlencodedParser = bodyParser.urlencoded({
-    extended: false
-})
+const urlencodedParser = bodyParser.urlencoded({ extended: false })
 
-const KEY = require('../../config/functions/token');
-const {
-    SECRET_TOKEN_CLIENT
-} = require('../../config');
-const Relationship = require('../../config/models/Relationship'); //MODEL
-const CRUD = require('../../config/functions/API'); // API
-const {
-    InsertRelationship
-} = require('../../config/functions/validator/Insert'); // VALIDATOR
+const Auto_Evaluation = require('../../config/models/Auto_Evaluation'); //MODEL
+const CRUD = require('../../config/functions/API'); //API
+const { InsertAutoEvaluation } = require('../../config/functions/validator/Insert'); //VALIDATOR
+const KEY = require('../../config/functions/token'); //TOKEN VALIDATOR
+const { SECRET_TOKEN_CLIENT } = require('../../config'); //TOKEN
 
-router.post('/InsertRelationship', KEY.verifyToken, urlencodedParser, (req, res) => {
+router.post('/InsertAutoEvaluation', KEY.verifyToken,  urlencodedParser, (req, res) => {
 
     if (!req.body || req.body.length === 0) {
         console.log('request body not found');
         return res.sendStatus(400);
     }
+
     jwt.verify(req.token, SECRET_TOKEN_CLIENT, (err, authData) => {
         if (err) {
             res.sendStatus(403);
@@ -31,7 +26,7 @@ router.post('/InsertRelationship', KEY.verifyToken, urlencodedParser, (req, res)
 
             const {
                 error
-            } = Joi.validate(data, InsertRelationship);
+            } = Joi.validate(data, InsertAutoEvaluation);
 
             if (error) {
                 res
@@ -41,7 +36,8 @@ router.post('/InsertRelationship', KEY.verifyToken, urlencodedParser, (req, res)
                         error: error.details
                     });
             } else {
-                CRUD.Insert(Relationship, data, res);
+                CRUD.Insert(Auto_Evaluation, data, res);
+
             }
         }
     });

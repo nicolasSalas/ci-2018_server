@@ -1,29 +1,36 @@
-const sequelize = require('sequelize');
-const connection = require('../conection');
-const Sector = require('./Sector');
+const sequelize = require("sequelize")
+const connection = require("../conection")
+const Sector = require("./Sector")
 
-const Natural_person = connection.define('Natural_person', {
+const Natural_person = connection.define(
+  "Natural_person",
+  {
     ID: {
-        type: sequelize.INTEGER,
-        field: 'ID',
-        autoIncrement: true,
-        primaryKey: true
+      type: sequelize.INTEGER,
+      field: "ID",
+      autoIncrement: true,
+      primaryKey: true
     },
     Name: {
-        type: sequelize.STRING,
-        field: 'Contact_Name'
+      type: sequelize.STRING,
+      field: "Contact_Name"
     },
     Position: {
-        type: sequelize.STRING,
-        field: 'Position'
+      type: sequelize.STRING,
+      field: "Position"
     },
-
-}, {
+    Mail: {
+      type: sequelize.STRING,
+      field: "Mail"
+    }
+  },
+  {
     freezeTableName: true,
     operatorsAliases: false
-});
+  }
+)
 
 Natural_person.belongsTo(Sector, {
-    as: 'Sector_ID_as',
-    foreignKey: 'Sector_ID'
-});
+  as: "Sector_ID_as",
+  foreignKey: "Sector_ID"
+})

@@ -88,5 +88,22 @@ module.exports = {
         res.status(500);
         res.json({ error: error, stackError: error.stack });
       });
+  },
+  Validate: (propiety, data, res) => {
+    propiety
+      .sync()
+      .then(() =>
+        propiety.findAll({
+          where: data
+        })
+      )
+      .then(async result => {
+        let status = (await result.length) > 0 ? true : false;
+        res.json({ success: status }).status(200);
+      })
+      .catch(error => {
+        res.status(500);
+        res.json({ error: error, stackError: error.stack });
+      });
   }
 };

@@ -9,7 +9,7 @@ const connection = require("../../config/conection");
 const KEY = require("../../config/functions/token");
 const { SECRET_TOKEN_CLIENT } = require("../../config"); //TOKEN
 
-router.get("/GetView", KEY.verifyToken, urlencodedParser, (req, res) => {
+router.get("/AutoEvaluationView", KEY.verifyToken, urlencodedParser, (req, res) => {
   if (!req.body || req.body.length === 0) {
     console.log("request body not found");
     return res.sendStatus(400);
@@ -20,7 +20,7 @@ router.get("/GetView", KEY.verifyToken, urlencodedParser, (req, res) => {
       res.sendStatus(403);
     } else {
       connection
-        .query("SELECT * FROM `GetData_2`", {
+        .query("SELECT * FROM `AutoEvaluationView`", {
           type: sequelize.QueryTypes.SELECT
         })
         .then(response => {

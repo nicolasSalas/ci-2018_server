@@ -21,10 +21,15 @@ const ReadMailSurveyed_And_ID = {
     Enterprise_Evaluation_ID: Joi.number().integer().required()
 }
 
+const ReadMail = {
+    Mail: Joi.string().required(),
+}
+
 module.exports = {
     ReadLink,
     ReadSectorID_From_Enterprise_Evaluation,
     ReadSubSector_And_ID,
     ReadEnterprise_Stored,
-    ReadMailSurveyed_And_ID
+    ReadMailSurveyed_And_ID,
+    ReadMail
 };

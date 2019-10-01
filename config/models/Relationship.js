@@ -1,4 +1,3 @@
-
 const sequelize = require('sequelize');
 const connection = require('../conection');
 const Mail_surveyed = require('./Surveyed');
@@ -13,15 +12,30 @@ const Relationship = connection.define('Relationship', {
         autoIncrement: true,
         primaryKey: true
     }
-},
-    {
-        freezeTableName: true,
-        operatorsAliases: false
-    });
+}, {
+    freezeTableName: true,
+    operatorsAliases: false
+});
 
-Relationship.belongsTo(Mail_surveyed, { as:'Mail_Surveyed_ID_as', foreignKey: 'Mail_Surveyed_ID'});
-Relationship.belongsTo(Enterprise_selected, { as:'Enterprise_Selected_ID_as', foreignKey: 'Enterprise_Selected_ID'});
-Relationship.belongsTo(Variables_selected, { as:'Variables_Selected_ID_as', foreignKey: 'Variables_Selected_ID'});
-Relationship.belongsTo(Answer_to_question, { as:'Answer_To_Question_ID_as', foreignKey: 'Answer_To_Question_ID'});
+Relationship.belongsTo(Mail_surveyed, {
+    as: 'Mail_Surveyed_ID_as',
+    foreignKey: 'Mail_Surveyed_ID'
+});
+Relationship.belongsTo(Enterprise_selected, {
+    as: 'Enterprise_Selected_ID_as',
+    foreignKey: 'Enterprise_Selected_ID'
+});
+Relationship.belongsTo(Variables_selected, {
+    as: 'Variables_Selected_ID_as',
+    foreignKey: 'Variables_Selected_ID'
+});
+Relationship.belongsTo(Answer_to_question, {
+    as: 'Answer_To_Question_ID_as',
+    foreignKey: 'Answer_To_Question_ID'
+});
+Relationship.belongsTo(Answer_to_question, {
+    as: 'Answer_To_Question_ID_2_as',
+    foreignKey: 'Answer_To_Question_ID_2'
+});
 
 module.exports = Relationship;
