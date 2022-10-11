@@ -26,10 +26,10 @@
     "passport": "^0.4.0",
     "path": "^0.12.7",
     "sequelize": "^4.37.6",
-    "soap": "^0.19.0",
+    "soap": "^0.45.0",
     "unirest": "^0.5.1",
     "wiredep": "^4.0.0",
-    "x2js": "^3.1.0"
+    "x2js": "^3.4.3"
   },
   "devDependencies": {
     "browser-sync": "^2.18.8",
